@@ -1,3 +1,3 @@
 # OpenBlock wiki
 
-https://openblockcc.github.io/wiki/
+https://openblockcc.gitee.io/wiki/
