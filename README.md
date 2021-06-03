@@ -1,12 +1,12 @@
 # OpenBlock Wiki
 
-![](https://img.shields.io/github/workflow/status/openblockcc/wiki/documentation) [![Gitter](https://badges.gitter.im/openblockcc/community.svg)](https://gitter.im/openblockcc/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+![](https://img.shields.io/github/workflow/status/openblockcc/wiki/documentation-main/main) [![Gitter](https://badges.gitter.im/openblockcc/community.svg)](https://gitter.im/openblockcc/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Visit wiki
 
-- Github: https://openblockcc.github.io/wiki/
+- Github: https://openblockcc.github.io/wiki/main
 
-- Gitee (镜像): https://openblockcc.gitee.io/wiki/
+- Gitee (mirror): https://openblockcc.gitee.io/wiki/main
 
 ## Join chat
 
@@ -16,8 +16,8 @@
 
 ## Edit wiki
 
-This repo is just a entrance for place site links of different languages. If you want to submit PRs, please visit:
+This branch is just a site entrance. It does not contain the actual content. If you want to submit PRs, please visit:
 
-- English wiki respository: [https://github.com/openblockcc/wiki-en](https://github.com/openblockcc/wiki-en)
+- Chinese branch: [https://github.com/openblockcc/wiki/tree/zh](https://github.com/openblockcc/wiki/tree/zh)
 
-- Chinese wiki respository: [https://github.com/openblockcc/wiki-zh](https://github.com/openblockcc/wiki-zh)
+- English branch : [https://github.com/openblockcc/wiki/tree/en](https://github.com/openblockcc/wiki/tree/en)
