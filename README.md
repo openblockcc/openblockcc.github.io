@@ -4,9 +4,9 @@
 
 ## 访问Wiki
 
-- Github: https://openblockcc.github.io/wiki/zh/index.html
+- Github: https://openblockcc.github.io/wiki/zh
 
-- Gitee (镜像): https://openblockcc.gitee.io/wiki/zh/index.html
+- Gitee (镜像): https://openblockcc.gitee.io/wiki/zh
 
 ## 加入讨论组
 
