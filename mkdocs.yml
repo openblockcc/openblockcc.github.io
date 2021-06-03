@@ -1,18 +1,18 @@
 # Project information
 site_name: OpenBlock
-site_url: https://openblockcc.github.io/wiki-zh
+site_url: https://openblockcc.github.io/wiki/en
 site_author: OpenBlock Team
 site_description: >-
-  OpenBlock 中文资料站
+  OpenBlock English Wiki
 
 # Repository
-repo_name: openblockcc/wiki-zh
-repo_url: https://github.com/openblockcc/wiki-zh
+repo_name: openblockcc/wiki
+repo_url: https://github.com/openblockcc/wiki/tree/en
 
 # Configuration
 theme:
   name: material
-  language: zh
+  language: en
   features:
     - navigation.tabs
     - navigation.sections
