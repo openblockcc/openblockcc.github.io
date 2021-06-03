@@ -1,10 +1,10 @@
 !!! info
-    在未安装 OpenBlock Link 的情况下，将无法连接硬件设备、选择第三方设备和加载设备扩展插件，如需要使用完整功能，请先在下载页面中下载安装 OpenBlock Link 并开启。 [点击访问下载页面](download-software.md)
+    If OpenBlock Link is not installed, you will not be able to connect hardware devices, select third-party devices, and load device extensions. If you need to use the full function, please download and install OpenBlock Link on the download page and open it. [Click to visit the download page](download-software.md)
 
-## 全球地址
+## International Address
 
 [Openblock Online](https://openblockcc.github.io/openblock-gui/develop/){: .md-button}
 
-## 国内镜像地址
+## China Mirror Address
 
-[Openblock 在线版](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button  .md-button--primary} (由于 Gitee Pages 服务升级暂时无法访问)
+[Openblock Online](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button  .md-button--primary} (Due to Gitee Pages service upgrade temporarily unavailable)
