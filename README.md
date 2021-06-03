@@ -1,39 +1,7 @@
-# OpenBlock 中文资料站
+# OpenBlock wiki
 
-![](https://img.shields.io/github/workflow/status/openblockcc/wiki/documentation-zh/zh) [![Gitter](https://badges.gitter.im/openblockcc/community.svg)](https://gitter.im/openblockcc/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+https://openblockcc.github.io/wiki-en/
 
-## 访问Wiki
+The native language of the project developer is Chinese, so the Chinese wiki is the main update content. There may be a lot of untranslated content in this English wiki. If you can help translate the Chinese wiki, please contact me via email.
 
-- Github: https://openblockcc.github.io/wiki/zh/index.html
-
-- Gitee (镜像): https://openblockcc.gitee.io/wiki/zh/index.html
-
-## 加入讨论组
-
-Gitter: [https://gitter.im/openblockcc/community](https://gitter.im/openblockcc/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-
-QQ群: 933484739
-
-## 编辑 Wiki
-
-- 开发环境
-
-    python3.x
-
-- 安装
-
-    ```bash
-    pip install mkdocs-material
-    ```
-
-- 预览页面
-
-    ```bash
-    mkdocs serve
-    ```
-
-    运行上述指令启动 mkdocs 本地服务器并使用浏览器访问 http://127.0.0.1:8000 即可预览部署网站后的效果。
-
-- 发布
-
-    工程已配置 Github Action， 提交代码后会构建站点内容。
+arthurzheng150@gmail.com

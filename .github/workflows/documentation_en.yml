@@ -18,14 +18,14 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-name: documentation-zh
+name: documentation-en
 on:
   push:
     branches:
-      - zh
+      - en
   pull_request:
     branches:
-      - zh
+      - en
 
 env:
   PYTHON_VERSION: 3.x
@@ -53,11 +53,10 @@ jobs:
         run: |
           mkdocs build
           mkdocs --version
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/zh'
+        if: github.ref == 'refs/heads/en'
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./site
-          destination_dir: zh
+          destination_dir: en
