@@ -1081,8 +1081,8 @@ npm run fetch
 </code></pre></div>
 </li>
 <li>
-<p>而后打开 openblock-resource 存放的路径，在同级目录下找到并打开以下路径：</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;.openblockData\openblock--resources\extensions&quot;</span>
+<p>而后打开 openblock-resource 存放的路径，在目录下找到并打开以下路径：</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;external-resources/extensions&quot;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -1280,7 +1280,7 @@ npm run fetch
 <span class="sb">    &lt;block type=&quot;singleLED_setLEDState&quot; id=&quot;singleLED_setLEDState&quot;&gt;</span>
 <span class="sb">        &lt;value name=&quot;pin&quot;&gt;</span>
 <span class="sb">            &lt;shadow type=&quot;math_number&quot;&gt;</span>
-<span class="sb">                &lt;field name=&quot;NUM&quot; disabled=&quot;true&quot;&gt;2&lt;/field&gt;</span>
+<span class="sb">                &lt;field name=&quot;NUM&quot;&gt;2&lt;/field&gt;</span>
 <span class="sb">            &lt;/shadow&gt;</span>
 <span class="sb">        &lt;/value&gt;</span>
 <span class="sb">    &lt;/block&gt;</span>
@@ -1325,7 +1325,7 @@ npm run fetch
 </code></pre></div>
 </li>
 <li>
-<p>而后开启 OpenBlock 桌面版，启动时会报错：“地址已被占用”，点击确定忽略即可。</p>
+<p>而后开启 OpenBlock 桌面版。</p>
 </li>
 </ol>
 </div>
@@ -1335,6 +1335,14 @@ npm run fetch
 <p>在工作区组装一个程序，调用插件的积木块。</p>
 <p><img alt="!Description" src="../assets/code-singleLED.png" /></p>
 <p>随便修改以下引脚和状态选项，发现生成的代码正确。这样一个简单的插件就编写完成了。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>使用 openblock-resource 方法时，再启动后会模拟桌面版首次启动的过程，将路径下的 external-resources 复制到上级目录的 <code>.openblockData</code> 文件夹中，且每次启动都会自动清除这个目录的内容并重新复制，在插件体积较大时该过程耗时较长，建议将 <code>package.json</code> 文件 L8 行中的 <code>"start": "rimraf ../.openblockData/external-resources &amp;&amp; node ./test/start.js",</code> 改为 <code>"start": "node ./test/start.js",</code> 以关闭自动清除指令，如果在之后的修改中删除了某些文件时，可以手动清除目录中的缓存以删除不再使用的文件。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>在服务器启动后，缓存目录下的文件只有 <code>index.js</code>， <code>locales.js</code>，<code>config.json</code> 文件会被直接读取，在修改这仨个文件后必须重启软件或指令服务器才可生效。但其他如：<code>blocks.js</code> 等文件在修改后可以在软件界面中重新加载就可生效，而不需要重启，这样可以加快调试速度和流程。</p>
+</div>
 <h2 id="_4">贡献代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>在完成插件的调试后，此时我们的插件仍处于独立的工程或缓存内的临时路径，在清除缓存或关闭 openblock-resource 服务器后就会恢复原样。此时我们可以将调试好的插件移动至软件安装路径下的文件夹中 <code>OpenBlock\resources\external-resources\extensions</code>，软件在首次运行或清除缓存后会从此处拷贝文件到缓存下使用，并将 <code>OpenBlock\resources\external-resources\config.json</code> 中的 repository 值改为空。否则如果远程服务器的资源如果更新了，更新后的文件就会覆盖缓存内容，导致在安装目录下添加的插件没有显示。但这样会导致插件升级功能失效，无法再从服务器获取新的内容。</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;repository&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v1.0.1&quot;</span><span class="p">}</span>
