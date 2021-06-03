@@ -4,7 +4,9 @@
 
 ![](assets\OpenBlock.png)
 
-[奶牛快传 (不限速) :fontawesome-solid-download:](https://cowtransfer.com/s/8a8a12ca04e443){: .md-button  .md-button--primary}
+[Github Release :fontawesome-solid-download:](https://github.com/openblockcc/openblock-desktop/releases){: .md-button  .md-button--primary}
+
+[百度云盘 (提取码: scaj) :fontawesome-solid-download:](https://pan.baidu.com/s/1ZbpDvno53GAKtcAbGYYR4g){: .md-button}
 
 ## OpenBlock  Link
 
