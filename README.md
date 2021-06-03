@@ -4,9 +4,9 @@
 
 ## Visit Wiki
 
-- Github: https://openblockcc.github.io/wiki/en/index.html
+- Github: https://openblockcc.github.io/wiki/en
 
-- Gitee (mirror): https://openblockcc.gitee.io/wiki/en/index.html
+- Gitee (mirror): https://openblockcc.gitee.io/wiki/en
 
 ## Jion Group
 
