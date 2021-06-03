@@ -20,8 +20,12 @@
 
 name: build
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 env:
   NODE_VERSION: 12.x

@@ -18,9 +18,12 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-name: documentation
+name: documentation-main
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -29,7 +32,7 @@ env:
 
 jobs:
   documentation:
-    name: Build documentation
+    name: Build main documentation
     runs-on: ubuntu-latest
     steps:
 
@@ -48,9 +51,17 @@ jobs:
             mkdocs-minify-plugin>=0.3 \
             mkdocs-redirects>=1.0
 
-      - name: Deploy documentation
+      - name: Build
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-          mkdocs gh-deploy --force
+          mkdocs build
           mkdocs --version
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./site
+          destination_dir: main
