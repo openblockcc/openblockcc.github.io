@@ -2,7 +2,7 @@
 
 ## OpenBlock 桌面版
 
-![](assets\OpenBlock.png)
+![](assets/OpenBlock.png)
 
 [Github Release :fontawesome-solid-download:](https://github.com/openblockcc/openblock-desktop/releases){: .md-button  .md-button--primary}
 
@@ -13,6 +13,6 @@
 !!! warning
     该软件仅用于访问在线版 OpenBlock 时使用，请勿同时开启 OpenBlock 离线版 与 OpenBlock  Link。
 
-![](assets\OpenBlock-Link.png)
+![](assets/OpenBlock-Link.png)
 
 由于软件近期大幅度的更新 OpenBlock Link 尚未完成升级，导致无法兼容目前在线版的网页，暂时关闭 OpenBlock Link 的下载。
