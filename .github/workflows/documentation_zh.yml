@@ -23,6 +23,9 @@ on:
   push:
     branches:
       - zh
+  pull_request:
+    branches:
+      - zh
 
 env:
   PYTHON_VERSION: 3.x
