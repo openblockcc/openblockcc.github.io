@@ -1,6 +1,6 @@
 # Project information
 site_name: OpenBlock Wiki
-site_url: https://openblockcc.github.io/wiki/
+site_url: https://openblockcc.github.io/wiki/main
 site_author: Arthur Zheng
 site_description: >-
   Open source block program software for arduino micrpython or other hardware
