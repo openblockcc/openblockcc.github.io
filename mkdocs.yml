@@ -1,0 +1,109 @@
+# Project information
+site_name: OpenBlock
+site_url: https://openblockcc.github.io/wiki-zh
+site_author: OpenBlock Team
+site_description: >-
+  OpenBlock 中文资料站
+
+# Repository
+repo_name: openblockcc/wiki-zh
+repo_url: https://github.com/openblockcc/wiki-zh
+
+# Configuration
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+  icon:
+    logo: material/library
+  favicon: assets/favicon.png
+  logo: 'assets/logo.svg'
+
+# Copyright
+copyright: Copyright &copy; 2020 - 2021 openblock.cc
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/openblockcc
+
+# Google Analytics
+google_analytics:
+  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
+  - auto
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+# Page tree
+nav:
+  - 主页: 
+    - 主页: index.md
+    - 下载软件: download-software.md
+    - 访问在线版: visit-online-version.md
+    - 版权声明:
+      - 许可证: license.md
+      - 商标: trademark.md
+  - 普通用户:
+    - 快速开始: normal-user/quick-start.md
+    - 界面介绍: normal-user/interface-introduction.md
+  - 开发者:
+    - 开发插件:
+      - 快速开始: developer/develop-extensions/quick-start.md
+      - 参考: developer/develop-extensions/reference.md
+    - 定制化:
+      - 介绍: developer/customization/introduction.md
+      - 参考: developer/customization/reference.md
+    - 从源代码开发:
+      - 快速开始: developer/develop-from-source/quick-start.md
+      - 构架介绍: developer/develop-from-source/framework-introduction.md
+      - 添加新控制板: developer/develop-from-source/add-a-new-board.md
+      - 打包桌面版: developer/develop-from-source/pack-desktop-software.md
+      - 本土化: developer/develop-from-source/localization.md
+  - 商业服务:
+    - 介绍: business-service/introduction.md
+  - 变更记录:
+    - 桌面版变更记录: desktop-changelog.md
