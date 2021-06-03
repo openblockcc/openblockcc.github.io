@@ -45,10 +45,10 @@
         npm run fetch
         ```
 
-    3. 而后打开 openblock-resource 存放的路径，在同级目录下找到并打开以下路径：
+    3. 而后打开 openblock-resource 存放的路径，在目录下找到并打开以下路径：
 
         ```js
-        ".openblockData\openblock--resources\extensions"
+        "external-resources/extensions"
         ```
 
 编辑器方面，推荐使用 VS Code.
@@ -270,7 +270,7 @@ function addToolbox () {
     <block type="singleLED_setLEDState" id="singleLED_setLEDState">
         <value name="pin">
             <shadow type="math_number">
-                <field name="NUM" disabled="true">2</field>
+                <field name="NUM">2</field>
             </shadow>
         </value>
     </block>
@@ -321,7 +321,7 @@ exports = addMsg;
         npm run start
         ```
 
-    3. 而后开启 OpenBlock 桌面版，启动时会报错：“地址已被占用”，点击确定忽略即可。
+    3. 而后开启 OpenBlock 桌面版。
 
 而后我们选择 Arduino Uno 控制板，切换到上传模式下，点击插件选择按钮，选择我们刚刚做好的插件。
 
@@ -332,6 +332,12 @@ exports = addMsg;
 ![!Description](./assets/code-singleLED.png)
 
 随便修改以下引脚和状态选项，发现生成的代码正确。这样一个简单的插件就编写完成了。
+
+!!! Tip
+    使用 openblock-resource 方法时，再启动后会模拟桌面版首次启动的过程，将路径下的 external-resources 复制到上级目录的 `.openblockData` 文件夹中，且每次启动都会自动清除这个目录的内容并重新复制，在插件体积较大时该过程耗时较长，建议将 `package.json` 文件 L8 行中的 `"start": "rimraf ../.openblockData/external-resources && node ./test/start.js",` 改为 `"start": "node ./test/start.js",` 以关闭自动清除指令，如果在之后的修改中删除了某些文件时，可以手动清除目录中的缓存以删除不再使用的文件。
+
+!!! Tip
+    在服务器启动后，缓存目录下的文件只有 `index.js`， `locales.js`，`config.json` 文件会被直接读取，在修改这仨个文件后必须重启软件或指令服务器才可生效。但其他如：`blocks.js` 等文件在修改后可以在软件界面中重新加载就可生效，而不需要重启，这样可以加快调试速度和流程。
 
 ## 贡献代码
 
