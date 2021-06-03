@@ -1,12 +1,12 @@
 # OpenBlock 中文资料站
 
-![](https://img.shields.io/github/workflow/status/openblockcc/wiki-zh/documentation) [![Gitter](https://badges.gitter.im/openblockcc/community.svg)](https://gitter.im/openblockcc/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+![](https://img.shields.io/github/workflow/status/openblockcc/wiki/documentation-zh/zh) [![Gitter](https://badges.gitter.im/openblockcc/community.svg)](https://gitter.im/openblockcc/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## 访问Wiki
 
-- Github: https://openblockcc.github.io/wiki-zh/
+- Github: https://openblockcc.github.io/wiki/zh/index.html
 
-- Gitee (镜像): https://openblockcc.gitee.io/wiki-zh/
+- Gitee (镜像): https://openblockcc.gitee.io/wiki/zh/index.html
 
 ## 加入讨论组
 
@@ -25,8 +25,6 @@ QQ群: 933484739
     ```bash
     pip install mkdocs-material
     ```
-
-TODO 补充 lightgallery-markdown 安装
 
 - 预览页面
 
