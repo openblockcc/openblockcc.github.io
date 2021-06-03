@@ -1,0 +1,1441 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OpenBlock 中文资料站">
+      
+      
+      
+        <meta name="author" content="OpenBlock Team">
+      
+      
+        <link rel="canonical" href="https://openblockcc.github.io/wiki-zh/developer/develop-extensions/quick-start/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>快速开始 - OpenBlock</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-183959845-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OpenBlock" class="md-header__button md-logo" aria-label="OpenBlock" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenBlock
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              快速开始
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/openblockcc/wiki-zh/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    openblockcc/wiki-zh
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        主页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../normal-user/quick-start/" class="md-tabs__link">
+        普通用户
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        开发者
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../business-service/introduction/" class="md-tabs__link">
+        商业服务
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../desktop-changelog/" class="md-tabs__link">
+        变更记录
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OpenBlock" class="md-nav__button md-logo" aria-label="OpenBlock" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenBlock
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/openblockcc/wiki-zh/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    openblockcc/wiki-zh
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        主页
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="主页" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          主页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download-software/" class="md-nav__link">
+        下载软件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visit-online-version/" class="md-nav__link">
+        访问在线版
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        版权声明
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="版权声明" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          版权声明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        许可证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../trademark/" class="md-nav__link">
+        商标
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        普通用户
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="普通用户" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          普通用户
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../normal-user/quick-start/" class="md-nav__link">
+        快速开始
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../normal-user/interface-introduction/" class="md-nav__link">
+        界面介绍
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        开发者
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发者" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          开发者
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        开发插件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发插件" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          开发插件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          快速开始
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        快速开始
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led" class="md-nav__link">
+    开发一个简单的 LED 模块插件
+  </a>
+  
+    <nav class="md-nav" aria-label="开发一个简单的 LED 模块插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexjs" class="md-nav__link">
+    修改 index.js 内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localesjs" class="md-nav__link">
+    修改 locales.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    修改积木结构，语言生成器，工具箱列表及翻译文件内容
+  </a>
+  
+    <nav class="md-nav" aria-label="修改积木结构，语言生成器，工具箱列表及翻译文件内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blocksjs" class="md-nav__link">
+    blocks.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatorjs" class="md-nav__link">
+    generator.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolboxjs" class="md-nav__link">
+    toolbox.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgjs" class="md-nav__link">
+    msg.js
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    验证插件功能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    贡献代码
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        参考
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        定制化
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="定制化" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          定制化
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/introduction/" class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/reference/" class="md-nav__link">
+        参考
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        从源代码开发
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="从源代码开发" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          从源代码开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/quick-start/" class="md-nav__link">
+        快速开始
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/framework-introduction/" class="md-nav__link">
+        构架介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/add-a-new-board/" class="md-nav__link">
+        添加新控制板
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/pack-desktop-software/" class="md-nav__link">
+        打包桌面版
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/localization/" class="md-nav__link">
+        本土化
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        商业服务
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="商业服务" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          商业服务
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../business-service/introduction/" class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        变更记录
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="变更记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          变更记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../desktop-changelog/" class="md-nav__link">
+        桌面版变更记录
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led" class="md-nav__link">
+    开发一个简单的 LED 模块插件
+  </a>
+  
+    <nav class="md-nav" aria-label="开发一个简单的 LED 模块插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexjs" class="md-nav__link">
+    修改 index.js 内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localesjs" class="md-nav__link">
+    修改 locales.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    修改积木结构，语言生成器，工具箱列表及翻译文件内容
+  </a>
+  
+    <nav class="md-nav" aria-label="修改积木结构，语言生成器，工具箱列表及翻译文件内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blocksjs" class="md-nav__link">
+    blocks.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatorjs" class="md-nav__link">
+    generator.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolboxjs" class="md-nav__link">
+    toolbox.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgjs" class="md-nav__link">
+    msg.js
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    验证插件功能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    贡献代码
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/openblockcc/wiki-zh/edit/master/docs/developer/develop-extensions/quick-start.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>快速开始</h1>
+                
+                <h2 id="_1">介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>为 OpenBlock 开发插件的方式主要有2种：</p>
+<ol>
+<li>安装 OpenBlock Desktop 或 OpenBlock Link，在缓存目录下添加并调试插件。</li>
+<li>安装Node开发环境，克隆 openblock-resource 软件包并运行，而后在临时生成的缓存目录下添加并调试插件。（此方法可大幅度提高调试效率。）</li>
+</ol>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">方法1</label><div class="tabbed-content">
+<ol>
+<li>下载并安装 OpenBlock Desktop 或 OpenBlock Link。</li>
+<li>开启软件 OpenBlock Desktop 或 OpenBlock Link 以在用户路径下生成缓存目录，而后关闭软件。</li>
+<li>
+<p>根据系统及所装软件打开以下路径（注意将 <user name> 替换为你的用户名）：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// OpenBlock Desktop - Windows</span>
+<span class="s2">&quot;C:\Users\&lt;user name&gt;\AppData\Roaming\Openblock\Data\external-resources\extensions&quot;</span>
+<span class="c1">// OpenBlock Desktop - Mac</span>
+<span class="nx">待补充</span>
+<span class="c1">// OpenBlock Desktop - Linux</span>
+<span class="nx">待补充</span>
+<span class="c1">// OpenBlock Link - Windows</span>
+<span class="s2">&quot;C:\Users\&lt;user name&gt;\AppData\Roaming\Openblock Link\Data\external-resources\extensions&quot;</span>
+<span class="c1">// OpenBlock Desktop - Mac</span>
+<span class="nx">待补充</span>
+<span class="c1">// OpenBlock Desktop - Linux</span>
+<span class="nx">待补充</span>
+</code></pre></div>
+</li>
+</ol>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">方法2</label><div class="tabbed-content">
+<ol>
+<li>
+<p>搭建开发环境</p>
+<p>请确保你的计算机已经安装好以下软件或工具：</p>
+<ul>
+<li>
+<p>Node.js &gt; 8</p>
+</li>
+<li>
+<p>git</p>
+</li>
+</ul>
+</li>
+<li>
+<p>运行下述指令克隆 openblock-resource 代码，安装依赖。</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/openblockcc/openblock-resource.git
+<span class="nb">cd</span> openblock-resource
+npm i
+npm run fetch
+</code></pre></div>
+</li>
+<li>
+<p>而后打开 openblock-resource 存放的路径，在同级目录下找到并打开以下路径：</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;.openblockData\openblock--resources\extensions&quot;</span>
+</code></pre></div>
+</li>
+</ol>
+</div>
+</div>
+<p>编辑器方面，推荐使用 VS Code.</p>
+<h2 id="led">开发一个简单的 LED 模块插件<a class="headerlink" href="#led" title="Permanent link">&para;</a></h2>
+<p>下面以开发一个适用于 Arduino 的 LED 模块插件作为入门例程。</p>
+<p>进入 <code>arduino/sensor</code> 目录复制 <code>dht11</code> 文件夹到 <code>arduino/display</code>，并重命名为 <code>singleLED</code> 我们将在此基础上修改为新的 LED 模块插件。操作完成后的目录结构应该如下所示：</p>
+<p><img alt="" src="../assets/directory-structure.png" /></p>
+<h3 id="indexjs">修改 index.js 内容<a class="headerlink" href="#indexjs" title="Permanent link">&para;</a></h3>
+<p>index文件描述了插件的基本信息，包含插件的名称等在GUI上显示和交互的内容。原始的文件内容如下：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">dht11</span> <span class="o">=</span> <span class="nx">formatMessage</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;DHT11&#39;</span><span class="p">,</span>
+    <span class="nx">extensionId</span><span class="o">:</span> <span class="s1">&#39;dht11&#39;</span><span class="p">,</span>
+    <span class="nx">version</span><span class="o">:</span> <span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span>
+    <span class="nx">supportDevice</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;arduinoUno&#39;</span><span class="p">,</span> <span class="s1">&#39;arduinoNano&#39;</span><span class="p">,</span> <span class="s1">&#39;arduinoLeonardo&#39;</span><span class="p">,</span> <span class="s1">&#39;arduinoMega2560&#39;</span><span class="p">],</span>
+    <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ArthurZheng&#39;</span><span class="p">,</span>
+    <span class="nx">iconURL</span><span class="o">:</span> <span class="sb">`asset/DTH11.png`</span><span class="p">,</span>
+    <span class="nx">description</span><span class="o">:</span> <span class="nx">formatMessage</span><span class="p">({</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;arduino.dht11.description&#39;</span><span class="p">,</span>
+        <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;DHT11 Temperature and humidity sensor module.&#39;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Description of dht11&#39;</span>
+    <span class="p">}),</span>
+    <span class="nx">featured</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">blocks</span><span class="o">:</span> <span class="s1">&#39;blocks.js&#39;</span><span class="p">,</span>
+    <span class="nx">generator</span><span class="o">:</span> <span class="s1">&#39;generator.js&#39;</span><span class="p">,</span>
+    <span class="nx">toolbox</span><span class="o">:</span> <span class="s1">&#39;toolbox.js&#39;</span><span class="p">,</span>
+    <span class="nx">msg</span><span class="o">:</span> <span class="s1">&#39;msg.js&#39;</span><span class="p">,</span>
+    <span class="nx">library</span><span class="o">:</span> <span class="s1">&#39;lib&#39;</span><span class="p">,</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;sensor&#39;</span><span class="p">],</span>
+    <span class="nx">helpLink</span><span class="o">:</span> <span class="s1">&#39;https://openblockcc.gitee.io/wiki/&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">dht11</span><span class="p">;</span>
+</code></pre></div>
+<ol>
+<li>
+<p>首先替换首位定义并导出的变量名从 dht11 为 singleLED。</p>
+</li>
+<li>
+<p>修改 Name 为 Single LED，此属性为在插件界面显示的插件名称。</p>
+</li>
+<li>
+<p>修改 ExtensionId 为 singleLED，注意此ID需要保证唯一性，不可与 Arduino 目录下其他的扩展 ID 重复。</p>
+</li>
+<li>
+<p>修改 Version 版本为 V0.0.1，此属性为在插件界面显示，用于管理跟踪与查询此插件的内容更新。</p>
+</li>
+<li>
+<p>author 修改为你的名字。</p>
+</li>
+<li>
+<p>保存下方图片至 <code>arduino/display/singleLED/asset/singleLED.png</code>，并修改 iconURL 为 <code>asset/singleLED.png</code>，此图片为插件封面图。</p>
+<p><img alt="" src="../assets/singleLED.png" /></p>
+</li>
+<li>
+<p>修改 description 为</p>
+<div class="highlight"><pre><span></span><code><span class="nx">formatMessage</span><span class="p">({</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;arduino.singleLED.description&#39;</span><span class="p">,</span>
+    <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;Single led module.&#39;</span><span class="p">,</span>
+    <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Description of singleLED&#39;</span>
+<span class="p">}),</span>
+</code></pre></div>
+<p>此属性为插件介绍，在插件图片下方显示。</p>
+</li>
+<li>
+<p>修改 tags 为 <code>display</code>，插件界面中用户选择 display 过滤时，此插件将会显示。</p>
+</li>
+<li>
+<p>删除 lib 属性以及 lib 文件夹，因为此插件不需要使用第三方的 Arduino 库。</p>
+</li>
+</ol>
+<p>修改后的文件内容如下：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">singleLED</span> <span class="o">=</span> <span class="nx">formatMessage</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Single LED&#39;</span><span class="p">,</span>
+    <span class="nx">extensionId</span><span class="o">:</span> <span class="s1">&#39;singleLED&#39;</span><span class="p">,</span>
+    <span class="nx">version</span><span class="o">:</span> <span class="s1">&#39;0.0.1&#39;</span><span class="p">,</span>
+    <span class="nx">supportDevice</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;arduinoUno&#39;</span><span class="p">,</span> <span class="s1">&#39;arduinoNano&#39;</span><span class="p">,</span> <span class="s1">&#39;arduinoLeonardo&#39;</span><span class="p">,</span> <span class="s1">&#39;arduinoMega2560&#39;</span><span class="p">],</span>
+    <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ArthurZheng&#39;</span><span class="p">,</span>
+    <span class="nx">iconURL</span><span class="o">:</span> <span class="sb">`asset/singleLED.png`</span><span class="p">,</span>
+    <span class="nx">description</span><span class="o">:</span> <span class="nx">formatMessage</span><span class="p">({</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;singleLED.description&#39;</span><span class="p">,</span>
+        <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;Single led module.&#39;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Description of single LED&#39;</span>
+    <span class="p">}),</span>
+    <span class="nx">featured</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">blocks</span><span class="o">:</span> <span class="s1">&#39;blocks.js&#39;</span><span class="p">,</span>
+    <span class="nx">generator</span><span class="o">:</span> <span class="s1">&#39;generator.js&#39;</span><span class="p">,</span>
+    <span class="nx">toolbox</span><span class="o">:</span> <span class="s1">&#39;toolbox.js&#39;</span><span class="p">,</span>
+    <span class="nx">msg</span><span class="o">:</span> <span class="s1">&#39;msg.js&#39;</span><span class="p">,</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;display&#39;</span><span class="p">],</span>
+    <span class="nx">helpLink</span><span class="o">:</span> <span class="s1">&#39;https://openblockcc.gitee.io/wiki/&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">singleLED</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="localesjs">修改 locales.js<a class="headerlink" href="#localesjs" title="Permanent link">&para;</a></h3>
+<p>这个文件中保存了 index 文件中 description 的本地化翻译内容。我们将 index 文件中的 formatMessage 对应 id 的翻译加入此文件。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;en&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;l298n.description&#39;</span><span class="o">:</span> <span class="s1">&#39;L298N motor drive module.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dht11.description&#39;</span><span class="o">:</span> <span class="s1">&#39;DHT11 temperature and humidity sensor module.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hc-sr04.description&#39;</span><span class="o">:</span> <span class="s1">&#39;HC-SR04 distance measurement module.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;oled.description&#39;</span><span class="o">:</span> <span class="s1">&#39;I2C oled display.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;softwareSerial.name&#39;</span><span class="o">:</span> <span class="s1">&#39;Software serial&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;softwareSerial.description&#39;</span><span class="o">:</span> <span class="s1">&#39;Allow serial communication on other digital pins of the Arduino.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cooperativeScheduler.name&#39;</span><span class="o">:</span> <span class="s1">&#39;Cooperative scheduler&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cooperativeScheduler.description&#39;</span><span class="o">:</span> <span class="s1">&#39;Allow Arduino run multiple applications.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ironKit.description&#39;</span><span class="o">:</span> <span class="s1">&#39;Yiqichuang iron kit robot.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;servo.name&#39;</span><span class="o">:</span> <span class="s1">&#39;Servo&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;servo.description&#39;</span><span class="o">:</span> <span class="s1">&#39;Classic servo support for microbit.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;QDPRobot.description&#39;</span><span class="o">:</span> <span class="s1">&#39;QDP robot.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;QDPRobot_C02.description&#39;</span><span class="o">:</span> <span class="s1">&#39;QDP robot C02.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ps2.name&#39;</span><span class="o">:</span> <span class="s1">&#39;PS2 remote control.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ps2.description&#39;</span><span class="o">:</span> <span class="s1">&#39;PS2 wireless remote controller with 4 signal lines.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;singleLED.description&#39;</span><span class="o">:</span> <span class="s1">&#39;Single led module.&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;zh-cn&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;l298n.description&#39;</span><span class="o">:</span> <span class="s1">&#39;L298N 电机驱动模块.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dht11.description&#39;</span><span class="o">:</span> <span class="s1">&#39;DHT11 温湿度传感器模块.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hc-sr04.description&#39;</span><span class="o">:</span> <span class="s1">&#39;HC_SR04 超声波测距模块.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;oled.description&#39;</span><span class="o">:</span> <span class="s1">&#39;I2C oled 显示屏.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;softwareSerial.name&#39;</span><span class="o">:</span> <span class="s1">&#39;软件串口&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;softwareSerial.description&#39;</span><span class="o">:</span> <span class="s1">&#39;使Arduino可以使用其他数字口进行串口通信.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cooperativeScheduler.name&#39;</span><span class="o">:</span> <span class="s1">&#39;多任务调度器&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cooperativeScheduler.description&#39;</span><span class="o">:</span> <span class="s1">&#39;使Arduino可以运行多个应用.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ironKit.description&#39;</span><span class="o">:</span> <span class="s1">&#39;意启创金属套件机器人.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;servo.name&#39;</span><span class="o">:</span> <span class="s1">&#39;舵机&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;servo.description&#39;</span><span class="o">:</span> <span class="s1">&#39;让Microbit可以控制普通的舵机.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;QDPRobot.description&#39;</span><span class="o">:</span> <span class="s1">&#39;齐护机器人.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;QDPRobot_C02.description&#39;</span><span class="o">:</span> <span class="s1">&#39;齐护机器人 C02.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ps2.name&#39;</span><span class="o">:</span> <span class="s1">&#39;PS2无线遥控器.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ps2.description&#39;</span><span class="o">:</span> <span class="s1">&#39;使用4根信号线的PS2无线遥控器.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;singleLED.description&#39;</span><span class="o">:</span> <span class="s1">&#39;单路 LED 模块.&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="_2">修改积木结构，语言生成器，工具箱列表及翻译文件内容<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>下面我们依次修改 blocks.js，generator.js，toolbox.js 及 msg.js 文件，他们分别为积木结构文件，语言生成器文件，工具箱列表文件以及翻译文件。不过在开始修改之前，我们还需要提前规划好我们要设计的插件的积木样式及内容。</p>
+<p>在这个例程中，我们只为此插件编写一个积木块，控制LED的开关状态，其内容与效果如下图所示。</p>
+<p><img alt="" src="../assets/led-block-zh.png" /></p>
+<h4 id="blocksjs">blocks.js<a class="headerlink" href="#blocksjs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">addBlocks</span> <span class="p">(</span><span class="nx">Blockly</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;#FF0000&#39;</span><span class="p">;</span>
+
+    <span class="nx">Blockly</span><span class="p">.</span><span class="nx">Blocks</span><span class="p">.</span><span class="nx">singleLED_setLEDState</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">jsonInit</span><span class="p">({</span>
+                <span class="nx">message0</span><span class="o">:</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">Msg</span><span class="p">.</span><span class="nx">SINGLELED_SET_LED_STATE</span><span class="p">,</span>
+                <span class="nx">args0</span><span class="o">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;input_value&#39;</span><span class="p">,</span>
+                        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;pin&#39;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;field_dropdown&#39;</span><span class="p">,</span>
+                        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;state&#39;</span><span class="p">,</span>
+                        <span class="nx">options</span><span class="o">:</span> <span class="p">[</span>
+                            <span class="p">[</span><span class="nx">Blockly</span><span class="p">.</span><span class="nx">Msg</span><span class="p">.</span><span class="nx">SINGLELED_ON</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="nx">Blockly</span><span class="p">.</span><span class="nx">Msg</span><span class="p">.</span><span class="nx">SINGLELED_OFF</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">]]</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nx">colour</span><span class="o">:</span> <span class="nx">color</span><span class="p">,</span>
+                <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;shape_statement&#39;</span><span class="p">]</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nx">Blockly</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">exports</span> <span class="o">=</span> <span class="nx">addBlocks</span><span class="p">;</span>
+</code></pre></div>
+<p>这个文件中定义了上图中积木的样式，由json格式的数据生成 svg 元素的积木块。其中实际显示的内容为 Blockly.Msg.XXX，这个变量是在 msg.js 中定义的，需要对照来看。</p>
+<h4 id="generatorjs">generator.js<a class="headerlink" href="#generatorjs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">addGenerator</span> <span class="p">(</span><span class="nx">Blockly</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Blockly</span><span class="p">.</span><span class="nx">Arduino</span><span class="p">.</span><span class="nx">singleLED_setLEDState</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">block</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">pin</span> <span class="o">=</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">Arduino</span><span class="p">.</span><span class="nx">valueToCode</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="s1">&#39;pin&#39;</span><span class="p">,</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">Arduino</span><span class="p">.</span><span class="nx">ORDER_ATOMIC</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getFieldValue</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="sb">`digitalWrite(</span><span class="si">${</span><span class="nx">pin</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">state</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nx">Blockly</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">exports</span> <span class="o">=</span> <span class="nx">addGenerator</span><span class="p">;</span>
+</code></pre></div>
+<p>这个文件中定义了 blocks.js 中对应积木的代码生成函数，在这个函数中获取了 pin 和 state 中的内容，并生成返回了对应的 arduino 代码。</p>
+<h4 id="toolboxjs">toolbox.js<a class="headerlink" href="#toolboxjs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">addToolbox</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="sb">`</span>
+<span class="sb">&lt;category name=&quot;%{BKY_SINGLELED_CATEGORY}&quot; id=&quot;SINGLELED_CATEGORY&quot; colour=&quot;#FF0000&quot; secondaryColour=&quot;#FF0000&quot;&gt;</span>
+<span class="sb">    &lt;block type=&quot;singleLED_setLEDState&quot; id=&quot;singleLED_setLEDState&quot;&gt;</span>
+<span class="sb">        &lt;value name=&quot;pin&quot;&gt;</span>
+<span class="sb">            &lt;shadow type=&quot;math_number&quot;&gt;</span>
+<span class="sb">                &lt;field name=&quot;NUM&quot; disabled=&quot;true&quot;&gt;2&lt;/field&gt;</span>
+<span class="sb">            &lt;/shadow&gt;</span>
+<span class="sb">        &lt;/value&gt;</span>
+<span class="sb">    &lt;/block&gt;</span>
+<span class="sb">&lt;/category&gt;`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">exports</span> <span class="o">=</span> <span class="nx">addToolbox</span><span class="p">;</span>
+</code></pre></div>
+<p>这个文件定义了积木在工具栏中的名称样式 及输入框中的默认内容与数据类型。其中 <code>%{BKY_SINGLELED_CATEGORY}</code> 的实际内容也在 msg.js 中定义，不过注意在赋值时需要去掉 <code>BKY_</code>前缀。</p>
+<h4 id="msgjs">msg.js<a class="headerlink" href="#msgjs" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">addMsg</span> <span class="p">(</span><span class="nx">Blockly</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">Blockly</span><span class="p">.</span><span class="nx">ScratchMsgs</span><span class="p">.</span><span class="nx">locales</span><span class="p">.</span><span class="nx">en</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">SINGLELED_CATEGORY</span><span class="o">:</span> <span class="s1">&#39;single LED&#39;</span><span class="p">,</span>
+        <span class="nx">SINGLELED_SET_LED_STATE</span><span class="o">:</span> <span class="s1">&#39;set pin %1 LED %2&#39;</span><span class="p">,</span>
+        <span class="nx">SINGLELED_ON</span><span class="o">:</span> <span class="s1">&#39;on&#39;</span><span class="p">,</span>
+        <span class="nx">SINGLELED_OFF</span><span class="o">:</span> <span class="s1">&#39;off&#39;</span>
+    <span class="p">});</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">Blockly</span><span class="p">.</span><span class="nx">ScratchMsgs</span><span class="p">.</span><span class="nx">locales</span><span class="p">[</span><span class="s1">&#39;zh-cn&#39;</span><span class="p">],</span> <span class="p">{</span>
+        <span class="nx">SINGLELED_CATEGORY</span><span class="o">:</span> <span class="s1">&#39;单路LED&#39;</span><span class="p">,</span>
+        <span class="nx">SINGLELED_SET_LED_STATE</span><span class="o">:</span> <span class="s1">&#39;设置引脚 %1 LED 为 %2&#39;</span><span class="p">,</span>
+        <span class="nx">SINGLELED_ON</span><span class="o">:</span> <span class="s1">&#39;开&#39;</span><span class="p">,</span>
+        <span class="nx">SINGLELED_OFF</span><span class="o">:</span> <span class="s1">&#39;关&#39;</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">Blockly</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">exports</span> <span class="o">=</span> <span class="nx">addMsg</span><span class="p">;</span>
+</code></pre></div>
+这个文件用于实现本地化翻译内容，定义了上面几个文件中变量的实际内容。</p>
+<h3 id="_3">验证插件功能<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>而后根据之前搭建开发环境的方式的不同，选择以下操作：</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">方法1</label><div class="tabbed-content">
+<ol>
+<li>直接开启 OpenBlock 桌面版</li>
+</ol>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">方法2</label><div class="tabbed-content">
+<ol>
+<li>
+<p>在 openblock-resource 目录下执行指令启动本地资源服务器</p>
+<div class="highlight"><pre><span></span><code>npm run start
+</code></pre></div>
+</li>
+<li>
+<p>而后开启 OpenBlock 桌面版，启动时会报错：“地址已被占用”，点击确定忽略即可。</p>
+</li>
+</ol>
+</div>
+</div>
+<p>而后我们选择 Arduino Uno 控制板，切换到上传模式下，点击插件选择按钮，选择我们刚刚做好的插件。</p>
+<p><img alt="" src="../assets/extension-library-singleLED.png" /></p>
+<p>在工作区组装一个程序，调用插件的积木块。</p>
+<p><img alt="!Description" src="../assets/code-singleLED.png" /></p>
+<p>随便修改以下引脚和状态选项，发现生成的代码正确。这样一个简单的插件就编写完成了。</p>
+<h2 id="_4">贡献代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>在完成插件的调试后，此时我们的插件仍处于独立的工程或缓存内的临时路径，在清除缓存或关闭 openblock-resource 服务器后就会恢复原样。此时我们可以将调试好的插件移动至软件安装路径下的文件夹中 <code>OpenBlock\resources\external-resources\extensions</code>，软件在首次运行或清除缓存后会从此处拷贝文件到缓存下使用，并将 <code>OpenBlock\resources\external-resources\config.json</code> 中的 repository 值改为空。否则如果远程服务器的资源如果更新了，更新后的文件就会覆盖缓存内容，导致在安装目录下添加的插件没有显示。但这样会导致插件升级功能失效，无法再从服务器获取新的内容。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;repository&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v1.0.1&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>如果你希望获得服务器的更新，并且希望自己编写的插件能够被更多的人使用，你可以在github上提交自己的插件代码，经过社区审核后。社区会定期整理发布新的更新包，这样你提交的代码就会在下一次的更新中出现了。</p>
+<p>社区插件及设备的外部资源仓库地址为：<a href="https://github.com/openblockcc/external-resources">https://github.com/openblockcc/external-resources</a>。</p>
+<p>fork 修改并 push 后再提交 pr 即可。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../../normal-user/interface-introduction/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              界面介绍
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../reference/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              参考
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 - 2021 openblock.cc
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/openblockcc" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+  </body>
+</html>

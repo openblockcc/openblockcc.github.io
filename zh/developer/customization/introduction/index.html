@@ -1,0 +1,1461 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OpenBlock 中文资料站">
+      
+      
+      
+        <meta name="author" content="OpenBlock Team">
+      
+      
+        <link rel="canonical" href="https://openblockcc.github.io/wiki-zh/developer/customization/introduction/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>介绍 - OpenBlock</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-183959845-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openblock" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OpenBlock" class="md-header__button md-logo" aria-label="OpenBlock" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenBlock
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              介绍
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/openblockcc/wiki-zh/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    openblockcc/wiki-zh
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        主页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../normal-user/quick-start/" class="md-tabs__link">
+        普通用户
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../develop-extensions/quick-start/" class="md-tabs__link md-tabs__link--active">
+        开发者
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../business-service/introduction/" class="md-tabs__link">
+        商业服务
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../desktop-changelog/" class="md-tabs__link">
+        变更记录
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OpenBlock" class="md-nav__button md-logo" aria-label="OpenBlock" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    OpenBlock
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/openblockcc/wiki-zh/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    openblockcc/wiki-zh
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        主页
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="主页" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          主页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download-software/" class="md-nav__link">
+        下载软件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visit-online-version/" class="md-nav__link">
+        访问在线版
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        版权声明
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="版权声明" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          版权声明
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        许可证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../trademark/" class="md-nav__link">
+        商标
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        普通用户
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="普通用户" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          普通用户
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../normal-user/quick-start/" class="md-nav__link">
+        快速开始
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../normal-user/interface-introduction/" class="md-nav__link">
+        界面介绍
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        开发者
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发者" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          开发者
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        开发插件
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="开发插件" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          开发插件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-extensions/quick-start/" class="md-nav__link">
+        快速开始
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-extensions/reference/" class="md-nav__link">
+        参考
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        定制化
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="定制化" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          定制化
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          介绍
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        介绍
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#openblock" class="md-nav__link">
+    离线版 OpenBlock 定制化步骤
+  </a>
+  
+    <nav class="md-nav" aria-label="离线版 OpenBlock 定制化步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openblock_1" class="md-nav__link">
+    下载并安装 OpenBlock 桌面版
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    修改插件与设备内容
+  </a>
+  
+    <nav class="md-nav" aria-label="修改插件与设备内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    文件结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    添加设备/套件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    添加插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    修改插件更新的服务器地址
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    修改软件后缀名并二次打包
+  </a>
+  
+    <nav class="md-nav" aria-label="修改软件后缀名并二次打包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    修改软件后缀名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    二次打包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        参考
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        从源代码开发
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="从源代码开发" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          从源代码开发
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/quick-start/" class="md-nav__link">
+        快速开始
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/framework-introduction/" class="md-nav__link">
+        构架介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/add-a-new-board/" class="md-nav__link">
+        添加新控制板
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/pack-desktop-software/" class="md-nav__link">
+        打包桌面版
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-from-source/localization/" class="md-nav__link">
+        本土化
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        商业服务
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="商业服务" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          商业服务
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../business-service/introduction/" class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        变更记录
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="变更记录" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          变更记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../desktop-changelog/" class="md-nav__link">
+        桌面版变更记录
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#openblock" class="md-nav__link">
+    离线版 OpenBlock 定制化步骤
+  </a>
+  
+    <nav class="md-nav" aria-label="离线版 OpenBlock 定制化步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openblock_1" class="md-nav__link">
+    下载并安装 OpenBlock 桌面版
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    修改插件与设备内容
+  </a>
+  
+    <nav class="md-nav" aria-label="修改插件与设备内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    文件结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    添加设备/套件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    添加插件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    修改插件更新的服务器地址
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    修改软件后缀名并二次打包
+  </a>
+  
+    <nav class="md-nav" aria-label="修改软件后缀名并二次打包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    修改软件后缀名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    二次打包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/openblockcc/wiki-zh/edit/master/docs/developer/customization/introduction.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>介绍</h1>
+                
+                <p>OpenBlock 在设计之时就考虑到了第三方厂商或工作室对软件定制化的需求，可在不涉及到源代码编译的情况下对设备选项及扩展进行随意的增减与调整顺序。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>此栏目中讲述的定制方法定义添加的设备必须是由软件内置的 <a href="../reference/#deviceid">基础控制板 deviceId</a> 衍生，如由 ArduinoUno 衍生的各类自带驱动等外设和定制接口的第三方控制板。如希望添加新构架的设备请参考 <a href="../../develop-from-source/add-a-new-board">软件开发者资料</a> 或在社区请愿。</p>
+</div>
+<h2 id="openblock">离线版 OpenBlock 定制化步骤<a class="headerlink" href="#openblock" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#openblock_1">下载并安装OpenBlock社区版</a></li>
+<li><a href="#_1">修改插件与设备内容</a></li>
+<li><a href="#_5">修改软件后缀名并二次打包</a></li>
+</ol>
+<h3 id="openblock_1">下载并安装 OpenBlock 桌面版<a class="headerlink" href="#openblock_1" title="Permanent link">&para;</a></h3>
+<p>下载并安装 OpenBlock 桌面版，安装完成后需要开启一次软件，用以生成缓存目录。</p>
+<h3 id="_1">修改插件与设备内容<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">文件结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>在完成软件安装后，我们进入安装目录，打开 <code>OpenBlock/resources/external-resources</code> 文件夹，可见如下文件内容。其中 <strong>devices</strong> 目录中存放设备配置，<strong>extensions</strong> 目录中存放设备扩展。我们在定制过程中仅需要对这两个文件夹中的内容进行修改即可。</p>
+<p><img alt="" src="../assets/resources_dir.png" /></p>
+<h4 id="_3">添加设备/套件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>进入 device 目录我们会看到有2个 <strong>.js</strong> 格式的文件和多个文件夹。</p>
+<p><img alt="" src="../assets/deivces_dir.png" /></p>
+<p>其中文件夹以厂商名称命名，内部放置了该厂商产品设备的描述。<strong>config.js</strong> 则控制设备选择界面中加载的设备内容和显示顺序。<strong>locales.js</strong> 多语言支持的翻译文件。整个文件结构如下形式：</p>
+<div class="highlight"><pre><span></span><code>devices
+    |- 厂商1/
+        |- 产品1/
+        |- 产品2/
+        |- 产品3/
+    |- 厂商2/
+        |- 产品1/
+        |- 产品2/
+    |- XXX/
+    |- device.js
+    |- locales.js
+</code></pre></div>
+<p>首先我们介绍产品配置目录，下面以 <strong>YQCRobot/ironKit</strong> 为例。这里路径下的文件内容如下：</p>
+<div class="highlight"><pre><span></span><code>YQCRobot/ironKit
+    |- asset/
+        |- ironKit.png
+        |- ironKit-illustration.svg
+        |- ironKit-small.svg
+    |- index.js
+</code></pre></div>
+<hr />
+<p><strong>Index.js</strong></p>
+<p>其中index.js为最关键的设备描述文件，asset中存放的设备也将由该文件导入。我们来看他的内容：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">ironKit</span> <span class="o">=</span> <span class="nx">formatMessage</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;IronKit&#39;</span><span class="p">,</span>
+    <span class="nx">deviceId</span><span class="o">:</span> <span class="s1">&#39;ironKit_arduinoUno&#39;</span><span class="p">,</span>
+    <span class="nx">manufactor</span><span class="o">:</span> <span class="s1">&#39;YQC Robot&#39;</span><span class="p">,</span>
+    <span class="nx">leanMore</span><span class="o">:</span> <span class="s1">&#39;https://item.taobao.com/item.htm?id=628120335101&#39;</span><span class="p">,</span>
+    <span class="nx">iconURL</span><span class="o">:</span> <span class="s1">&#39;asset/ironKit.png&#39;</span><span class="p">,</span>
+    <span class="nx">description</span><span class="o">:</span> <span class="nx">formatMessage</span><span class="p">({</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;ironKit.description&#39;</span><span class="p">,</span>
+        <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;Yiqichuang iron kit robot.&#39;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Description for the YQC iron kit device&#39;</span>
+    <span class="p">}),</span>
+    <span class="nx">disabled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">bluetoothRequired</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">serialportRequired</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">defaultBaudRate</span><span class="o">:</span> <span class="s1">&#39;9600&#39;</span><span class="p">,</span>
+    <span class="nx">pnpidList</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// Use default pnp list</span>
+    <span class="nx">internetConnectionRequired</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">launchPeripheralConnectionFlow</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">useAutoScan</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">connectionIconURL</span><span class="o">:</span> <span class="s1">&#39;asset/ironKit-illustration.svg&#39;</span><span class="p">,</span>
+    <span class="nx">connectionSmallIconURL</span><span class="o">:</span> <span class="s1">&#39;asset/ironKit-small.svg&#39;</span><span class="p">,</span>
+    <span class="nx">programMode</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;realtime&#39;</span><span class="p">,</span> <span class="s1">&#39;upload&#39;</span><span class="p">],</span>
+    <span class="nx">programLanguage</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;block&#39;</span><span class="p">,</span> <span class="s1">&#39;cpp&#39;</span><span class="p">],</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;kit&#39;</span><span class="p">],</span>
+    <span class="nx">deviceExtensions</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;ironKit&#39;</span><span class="p">],</span>
+    <span class="nx">deviceExtensionsCompatible</span><span class="o">:</span> <span class="s1">&#39;arduinoUno&#39;</span><span class="p">,</span>
+    <span class="nx">helpLink</span><span class="o">:</span> <span class="s1">&#39;https://www.sxyiqichuang.com/&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">ironKit</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>参数说明：</p>
+<ul>
+<li>
+<p>name</p>
+<p>设备名称，显示在设备选择界面中的设备名称。</p>
+</li>
+<li>
+<p>deviceId</p>
+<p>设备id，此id极为重要，其直接控制了选择该设备后一些列的后台功能处理作，必须按照规定形式组成：{定制设备名称 id}_(基础控制板 id)。其中定制设备的名称 id 需按照驼峰规则以没有空格的英文名称为标准。下划线后的基础控制板 id 则需要使用软件内置的基础控制板的 deviceId。可用选项可查看 <a href="../reference/#deviceid">基础控制板 deviceId</a> 获取。</p>
+</li>
+<li>
+<p>manufactor</p>
+<p>制造商，显示在设备选择界面中。</p>
+</li>
+<li>
+<p>leanMore</p>
+<p>放置制造商链接，将在点击设备名称或了解更多的按钮时打开，建议设定为公司网站或商城地址。</p>
+</li>
+<li>
+<p>iconURL</p>
+<p>设备图片，显示在设备选择界面中。应设置为asset中图片的相对路径。</p>
+</li>
+<li>
+<p>description</p>
+<p>设备描述，在设备选择界面的设备图片下方显示，这里使用了FormattedMessage来提供多种语言下的不同翻译内容。</p>
+</li>
+<li>
+<p>disabled</p>
+<p>如果设置为true，将会禁用这个设备选项，将显示为灰色无法被选取，并标上即将推出的标签。</p>
+</li>
+<li>
+<p>bluetoothRequired/serialportRequired/internetConnectionRequired</p>
+<p>设置为true将在设备选择界面要求栏中显示对应连接的图标，这几个参数只用于显示图标不会影响实际的连接功能。</p>
+</li>
+<li>
+<p>defaultBaudRate</p>
+<p>用于设定设备默认使用的串口终端波特率。</p>
+</li>
+<li>
+<p>pnpidList</p>
+<p>此参数用于控制，串口扫描程序的过滤器。只有符合这个列表中的 VID/PID 号的串口设备才会在设备连接窗口中显示，通过设定此参数可有效屏蔽台式机自带的串口或其他不相关设备的串口，放置客户由于选择串口而带来的问题。可用的选项如下：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>null</td>
+<td>启用该设备衍生母板的默认配置</td>
+</tr>
+<tr>
+<td>'*'</td>
+<td>关闭过滤器，显示全部可选择的串口</td>
+</tr>
+<tr>
+<td>具体的硬件ID数组</td>
+<td>设定过滤器仅显示该设定设置的硬件设备</td>
+</tr>
+</tbody>
+</table>
+<p>常用的具体的硬件ID请参考：<a href="../reference/#id_1">常见硬件ID</a></p>
+</li>
+<li>
+<p>launchPeripheralConnectionFlow</p>
+<p>设置为true会在选择设备后自动开启设备连接界面，建议设置为true。</p>
+</li>
+<li>
+<p>useAutoScan</p>
+<p>设置为true，将会自动连接扫描出的设备，不建议开启。</p>
+</li>
+<li>
+<p>connectionIconURL</p>
+<p>在设备连接成功的界面中显示。</p>
+</li>
+<li>
+<p>connectionSmallIconURL</p>
+<p>在设备连接界面的标题栏中显示。</p>
+</li>
+<li>
+<p>programMode</p>
+<p>设定设备支持的编程模式。在设备不支持对应的编程模式时，会自动切换到支持的模式并锁定模式切换开关。同时也控制在设备选择界面中编程模式栏中的显示。</p>
+</li>
+<li>
+<p>programLanguage</p>
+<p>仅用于在设备选择界面中编程语言栏中控制图标显示。</p>
+</li>
+<li>
+<p>deviceExtensions</p>
+<p>为该数组赋值可以在选择控制板后，自动加载设定的扩展插件。如在赋值为 <code>dht11</code> 时，在选择该控制板后 dht11 插件将被自动加载。一般在第三方套件中常设定为对应套件的扩展插件。即专门编写一个带有全部套件积木的扩展插件来专供此设备加载使用。</p>
+</li>
+<li>
+<p>deviceExtensionsCompatible</p>
+<p>设备扩展插件兼容性。通过设定该值可使得此设备使用为其他控制板编写的插件。如此处设定了 <code>arduinoUno</code> ，即设备扩展插件界面将同时加载支持 arduino uno 的插件。</p>
+</li>
+<li>
+<p>helpLink</p>
+<p>设备连接界面与选择界面中点击帮助按钮就会打开这个链接，建议设定至产品Wiki地址。</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>formatMessage 也可以用在 name 中，用于设定在不同语言下显示不同的名称。不过需要注意的是 id 作为 formatMessage 的唯一识别符，请勿在不同值的内容中设定相同的 id ，否则内容将会被重复和混淆。</p>
+</div>
+<hr />
+<p><strong>asset</strong></p>
+<p>这个文件夹中存放着在 index.js 中导入的设备图片。设备图片的分辨率和风格推荐按照以下参数设计。</p>
+<ol>
+<li>
+<p>根据以下参数与示例图片制作设备的图片，请确保在周围留有合适宽度的白色边缘，以保证风格统一， 这个图片将用于显示在设备选择界面中。</p>
+<p><strong>格式</strong>：png</p>
+<p><strong>分辨率</strong>：600x372</p>
+<p><strong>背景色</strong>：白色</p>
+<p>你可以直接保存下面这个图片来修改制作，在完成后以驼峰规则命名这个图片文件，如：<code>ironKit.png</code></p>
+<p><img alt="ironKit" src="../assets/ironKit.png" /></p>
+</li>
+<li>
+<p>制作生成 svg 格式的图片。在这一步中制作的两个图片将用于在连接设备时的界面上。</p>
+<p>将控制板主体扣出，删除图片的背景，并将图片长宽比调整为108：87，将控制板置于正中并，使得图片边缘尽可能的贴近控制板。而后保存为 png 格式。随后再将图片以同样的要求调整长宽比为 1：1，再次保存。</p>
+<p>访问这个在线格式转换的网站：<a href="https://www.aconvert.com/image/">aconvert.com</a>。将刚刚制作好的两张图片上传转换为 SVG 格式，记住要选择 <strong>Resize image</strong> 选项，将其分别设置为 <strong>108x87</strong> 和 <strong>40x40</strong>。</p>
+<p>将 108x87 的图片名称为：<code>&lt;device name&gt;-illustration.svg</code>，如：<code>ironKit-illustration.svg</code></p>
+<p><img alt="ironKit-illustration" src="../assets/ironKit-illustration.svg" /></p>
+<p>将 1:1 的图片名称为：<code>&lt;device name&gt;-small.svg</code>，如 : <code>ironKit-small.svg</code></p>
+<p><img alt="ironKit-small" src="../assets/ironKit-small.svg" /></p>
+</li>
+</ol>
+<hr />
+<p><strong>locales.js</strong></p>
+<p>这个文件用于翻译在 index.js 中使用的 formatMessage。显而易见，我们通过在此文件中加入使用的 id ，并对其赋值即可完成对该 id 对应字段的翻译。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;en&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ironKit.description&#39;</span><span class="o">:</span> <span class="s1">&#39;Yiqichuang iron kit robot.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;QDPRobot.description&#39;</span><span class="o">:</span> <span class="s1">&#39;QDP robot.&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;zh-cn&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ironKit.description&#39;</span><span class="o">:</span> <span class="s1">&#39;意启创金属套件机器人。&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;QDPRobot.description&#39;</span><span class="o">:</span> <span class="s1">&#39;齐护机器人。&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<p><strong>config.js</strong></p>
+<p>此文件用于控制设备选择列表中的显示内容和显示顺序。Openblock默认设定了系统内置控制板 + 三个第三方控制板的，此处使用的就是设备的 deviceId ，数据的顺序即对应设备在选择界面中的顺序。在添加新的设备后，对此表进行修改调整即可。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1">// Buid-in device</span>
+    <span class="s1">&#39;arduinoUno&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;arduinoNano&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;arduinoMini&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;arduinoLeonardo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;arduinoMega2560&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;arduinoEsp32&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;microbit&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;microbitV2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;maixduino&#39;</span><span class="p">,</span>
+    <span class="c1">// Third party</span>
+    <span class="s1">&#39;ironKit_arduinoUno&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;QDPRobot_arduinoUnoUltra&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;QDPRobotC02_arduinoEsp32&#39;</span>
+<span class="p">];</span>
+</code></pre></div>
+<hr />
+<p>将你想要添加的设备按照如上述所示，置于文件结构内并修改 locales.js 和 device.js 文件即可完成对设备的添加。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>在这个过程中修改配置的文件为简单的脚本代码，请务必遵照已有文件的格式规范，并使用半角标点，否则程序解析配置会失败造成错误。</p>
+</div>
+<h4 id="_4">添加插件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>我们在设计一个设备（套件 ）时，如果不配备其对应的插件内容，就只会加载其母控制板所拥有的默认积木，所以一般来说都会为其配备专属的插件内容，并将其 id 设置进入对应设备的 deviceExtensions 属性中，使得设备在选择后自动加载这些插件，来实现该设备的特定应用功能。</p>
+<p>在 resources/extensions 目录下添加设备对应插件，此步骤与插件介绍内容基本一致。唯一不同的是，为了阻止该插件显示在设备插件的选择目录中（防止用户点错而卸载套件对应插件），其插件 index.js 中，<code>supportDevice</code> 需设定为空值。如下所示：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">ironKit</span> <span class="o">=</span> <span class="nx">formatMessage</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Iron Kit&#39;</span><span class="p">,</span>
+    <span class="nx">extensionId</span><span class="o">:</span> <span class="s1">&#39;ironKit&#39;</span><span class="p">,</span>
+    <span class="nx">version</span><span class="o">:</span> <span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;arduino&#39;</span><span class="p">,</span>
+    <span class="nx">supportDevice</span><span class="o">:</span> <span class="p">[],</span> <span class="c1">// Hide kit extension in library</span>
+    <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;ArthurZheng&#39;</span><span class="p">,</span>
+    <span class="nx">iconURL</span><span class="o">:</span> <span class="sb">`asset/ironKit.png`</span><span class="p">,</span>
+    <span class="nx">description</span><span class="o">:</span> <span class="nx">formatMessage</span><span class="p">({</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;ironKit.description&#39;</span><span class="p">,</span>
+        <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;Yiqichuang iron kit robot.&#39;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Description of ironKit&#39;</span>
+    <span class="p">}),</span>
+    <span class="nx">featured</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">blocks</span><span class="o">:</span> <span class="sb">`blocks.js`</span><span class="p">,</span>
+    <span class="nx">generator</span><span class="o">:</span> <span class="sb">`generator.js`</span><span class="p">,</span>
+    <span class="nx">toolbox</span><span class="o">:</span> <span class="sb">`toolbox.js`</span><span class="p">,</span>
+    <span class="nx">msg</span><span class="o">:</span> <span class="sb">`msg.js`</span><span class="p">,</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;kit&#39;</span><span class="p">],</span>
+    <span class="nx">helpLink</span><span class="o">:</span> <span class="s1">&#39;https://www.sxyiqichuang.com&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">ironKit</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="_5">修改插件更新的服务器地址<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>Openblock 外部插件及设备自动更新功能是通过查找下载 github 及 gitee 的仓库的 Release 实现，仓库地址在 <code>OpenBlock/resources/external-resources/config.json</code> 中定义。具体使用 github 还是 gitee 地址则根据用户系统语言决定，防止中国区客户由于对 github 访问较慢导致更新时间过长的问题。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;repository&quot;</span><span class="p">:</span><span class="s2">&quot;openblockcc/external-resources&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;v1.0.1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>关闭自动更新功能</p>
+<p>将 repository 设置为空值即可实现。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;repository&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</code></pre></div>
+</li>
+<li>
+<p>搭建你自己的更新服务器</p>
+<ol>
+<li>首先需要在 github 以及 gitee 上注册两个 user 相同的账户或组织。如 Openblock 的 <code>https://github.com/openblockcc</code> 与 <code>https://gitee.com/openblockcc</code>。</li>
+<li>在 github 上 fork 社区的外部资源仓库：<a href="https://github.com/openblockcc/external-resources">https://github.com/openblockcc/external-resources</a></li>
+<li>克隆你 fork 下来的仓库，添加你想要的套件和插件内容。</li>
+<li>
+<p>克隆下来的文件中的 config.json 中的 repository 为你的 user 和仓库地址。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;repository&quot;</span><span class="p">:</span> <span class="s2">&quot;user/repo&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>push 修改后的代码到你的仓库。</p>
+</li>
+<li>
+<p>在 github 上发布一个 releases， 注 Tag version 与 Release title 均为新的版本号，并在 Describe 中填入此次更新的内容，建议按照下方格式描述（此处建议使用英文）。</p>
+<div class="highlight"><pre><span></span><code><span class="k">1.</span> 内容1
+<span class="k">2.</span> 内容2
+</code></pre></div>
+<p>而后点击 Publish release 发布。</p>
+</li>
+<li>
+<p>在 gitee 上导入 fork 后对应的 github 仓库（之后 github 每次修改后都在 gitee 的仓库名称后中点击同步按钮同步即可），以同样方式发布 Release，不过此处 Describe 中使用中文说明。</p>
+</li>
+<li>修改软件目录下 <code>OpenBlock/resources/external-resources/config.json</code> 中的地址与上述修改的地址一致。</li>
+<li>这样远程更新服务器的搭建以及更新地址得到修改就完成了。</li>
+</ol>
+</li>
+</ul>
+<h3 id="_6">修改软件后缀名并二次打包<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="_7">修改软件后缀名<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>为了区分各方二次打包后的软件版本，Openblock 特意设定此规范用以方便终端用户与服务人员识别软件发布方。</p>
+<ol>
+<li>
+<p>修改安装目录下的 exe 文件名</p>
+<p>名称以 <code>OpenBlock + '-' + 厂商名.exe</code> 组成，如 <code>OpenBlock-YQC.exe</code></p>
+</li>
+<li>
+<p>修改顶层文件夹名称</p>
+<p>名称以 <code>OpenBlock + '-' + 厂商名</code> 组成，如 <code>OpenBlock-YQC</code></p>
+</li>
+</ol>
+<h4 id="_8">二次打包<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>使用 7z 等压缩工具或其他类型的打包软件将修改完成后的软件目录打包即可。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../develop-extensions/reference/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              参考
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../reference/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              参考
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 - 2021 openblock.cc
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/openblockcc" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+  </body>
+</html>
