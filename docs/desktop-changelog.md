@@ -1,11 +1,69 @@
+## v2.2.2
+
+- **New feature**
+
+    1. Optimize the font and line break display effect of the serial terminal.
+    2. Display the loaded extensions first in the extensions library.
+    3. Modify the default serial port configuration of esp8266 to the official default 76800.
+    4. Modify the esp8266 upload rate to 921600 to speed up the upload speed.
+
+- **Fix bug**
+
+    1. When loading a project with a extension, an error will be reported and cannot be loaded.
+    2. The input box of the variable increase block is parsed incorrectly when other blocks or variables are placed.
+    3. In the even sprite, the movement blocks in the toolbox area will not automatically change to the coordinates of the character's current position.
+    4. Fix the problem that esp32 and esp8266 cannot start after clicking the reset button when connecting to openblock due to the lack of serial port to enable dtr rts flow control.
+    5. After connecting and disconnecting the device once in upload mode, no matter what mode is connected to the device again, it will not be able to establish communication with the connection firmata.
+    6. ESP32 and ESP8266 will get stuck for a long time between compiling and uploading.
+
+## v2.2.1
+
+- **Fix bug**
+
+    1. The data sent by the serial port is incorrect.
+    2. Sometimes the project file cannot be opened by double-click or cannot be loaded due to an error when loading the project.
+    3. Duplicate loading of projects after connecting devices can cause multiple real-time mode listeners to start causing errors.
+
+## v2.2.0
+
+- **New feature**
+
+    1. Add Kit filter option to device selection.
+    2. Add the option to cancel the device selection.
+    3. When loading a project containing unknown devices and plug-ins, the error details will be reported.
+    4. Update the device picture according to the new picture standard.
+    5. Automatically obtain the control board pin list in external extensions.
+    6. Add slider type blocks.
+    7. Optimized the devil bird svg image.
+    8. Add back edit menu.
+
+- **Fix bug**
+
+    1. The serial port send button is collapsed in small window mode.
+    2. Modify the default installation path of the desktop version of windows to the root directory of C drive instead of the deep directory of user data.
+    3. If there is an unsupported device id in the external device list, the device model will be empty.
+    4. Because the vm building block adds the device type in front of the optype, the display variable cannot be translated normally.
+    5. Esp8266 digital pin cannot select GPIO16.
+    6. Check the checkbox so that the variable will be displayed in the stage area, and it will still exist after switching the device.
+    7. Arduino ceil function name error.
+    8. The microbit attitude option is not translated.
+    9. Microbit uses multiple while true statements that are not supported.
+    10. When using the scroll wheel to move the toolbox, the completely displayed blocks beyond the boundary are blocked again.
+    11. Color picker function is not available.
+    12. The disconnection error alert flashes after switching the mode.
+    13. When using a third-party device, the alert uses the mother board instead of the picture of the third-party device board.
+    14. Error when load device in no target but has variable.
+
 ## v2.1.1
 
 - **New feature**
+
     1. Add esp8266 and makey makey support.
     2. Add a button to show all connectable device. Prevent users from being unable to connect to the device when using a USB-to-serial chip that is not included.
     3. Add file associations for .ob project file.
 
 - **Fix bug**
+
     1. Severe freeze after switching targets several times.
     2. The remote resource update address configuration error caused the program to crash after clicking the Check Update button.
     3. The remote resource update address incorrectly uses openblockcc instead of the address in the configuration.
@@ -15,6 +73,7 @@
 ## v2.1.0
 
 - **New feature**
+
     1. Change arduino build tool from arduino-builder to arduino-cli.
     2. Add remote upgrade function for external extension and device.
     3. Modify the default sprite to Demon Bird.
@@ -32,6 +91,7 @@
     15. Add QDP ROBOT C02 kit(arduino esp32).
 
 - **Fix bug**
+
     1. Stuck at the upload modal if unplug the usb cable while in arduino build progress.
     2. Unplug the usb cable while in arduino upload progress, the gui does not disconnect the device. User could still click the upload button and then will stuck in upload modal.
     3. Uploading the program or firmware after connecting and disconnecting the device several times will cause the real-time mode communication bug.
@@ -40,6 +100,7 @@
 ## v2.0.0
 
 - **New feature**
+
     1. Add serilport console.
     2. Separate third party device from bundle pack. now support modify third party device without rebuild the project.
     3. Optimize the block's disable logic in different programming modes.
@@ -52,6 +113,7 @@
     10. After the firmware is downloaded and the real-time communication is established successfully, the alert of real-time mode failure warning will automatically disappear.
 
 - **Fix bug**
+
     1. When loading a project file with multiple large extensions, the toolbar area will repeatedly display the contents of multiple extensions, and some other errors.
     2. The button to download firmware is not disabled when there is no connected device.
     3. Shorten the window of upload to fix the problem of incomplete display on some pc.
@@ -68,6 +130,7 @@
 ## v1.2.2beta
 
 - **New feature**
+
     1. Add hide code stage button.
     2. Change the ui of upload button.
     3. Change the description of some boards.
@@ -75,6 +138,7 @@
     5. Change project file extension from .sb3 to .ob.
 
 - **Fix bug**
+
     1. Microbit generator error.
     2. The pin menu of arduino set digital out does not have analog pin items.
 
@@ -82,38 +146,37 @@
 
 - **Fix bug**
 
-	1. Third party's block which from vm code generator error.
+    1. Third party's block which from vm code generator error.
 
 ## v1.2.0beta
 
 - **New feature**
 
-	1. Now most alert will automaticly disapear after 5s.
-	2. Completed the blocks of microbit.
-	3. Add a servo extension as demo for microbit.
-	4. After installing the new version of the software, the old cache will be cleared automatically.
+    1. Now most alert will automaticly disapear after 5s.
+    2. Completed the blocks of microbit.
+    3. Add a servo extension as demo for microbit.
+    4. After installing the new version of the software, the old cache will be cleared automatically.
 
 - **New  device/kit**
 
-	1. Arduino Mini
-	2. QDP Robot(齐护机器人) kit
+    1. Arduino Mini
+    2. QDP Robot(齐护机器人) kit
 
 - **Fix bug**
 
-	1. Error usb hardware id of cp2102.
-	2. Error translation of microbit.
-	3. Cannot scan to devices after loading a project.
-	4. The loaded device extension still exists after switching the device selection.
+    1. Error usb hardware id of cp2102.
+    2. Error translation of microbit.
+    3. Cannot scan to devices after loading a project.
+    4. The loaded device extension still exists after switching the device selection.
 
 ## v1.1.0beta
 
 - **New feature**
 
-	1. Blocks could over flow the flyout boundary when mouse enter.
-	2. Extension can be auto loaded when device selected.
+    1. Blocks could over flow the flyout boundary when mouse enter.
+    2. Extension can be auto loaded when device selected.
 
 - **New device/kit**
 
-	1. microbit
-	2. iron robot kit
-
+    1. microbit
+    2. iron robot kit
