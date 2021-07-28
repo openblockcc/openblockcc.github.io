@@ -1,3 +1,3 @@
-Openblock商标，包括Openblock名称，徽标和Openblock Devil Bird图形（“标记”），是Openblock.cc的财产。 未经明确的事先书面许可，不得将商标用于认可或促销从该软件衍生的产品。
+Openblock 商标，包括 Openblock 名称、徽标和 Openblock Devil Bird 图形（“标志”），是 Openblock.cc 的财产。 未经特别事先书面许可，不得使用标志来认可或推广源自该软件的非软件产品。
 
-在没有保留openblock名称和徽标的情况下，未经事先明确的书面许可，Openblock Devil Bird不能用于源代码和二进制形式的重新分发和使用。
+在不保留 openblock 名称和徽标的情况下，未经事先明确书面许可，Openblock Devil Bird 不能用于重新分发和以源代码和二进制形式使用。

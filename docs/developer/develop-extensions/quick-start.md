@@ -250,7 +250,7 @@ function addGenerator (Blockly) {
         const pin = Blockly.Arduino.valueToCode(block, 'pin', Blockly.Arduino.ORDER_ATOMIC);
         const state = this.getFieldValue('state');
 
-        return `digitalWrite(${pin}, ${state})`;
+        return `digitalWrite(${pin}, ${state})\n`;
     };
 
     return Blockly;
