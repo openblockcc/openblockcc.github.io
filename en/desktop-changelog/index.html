@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://openblockcc.github.io/wiki/en/desktop-changelog/">
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v222" class="md-skip">
+        <a href="#v225" class="md-skip">
           Skip to content
         </a>
       
@@ -808,6 +808,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v225" class="md-nav__link">
+    v2.2.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v224" class="md-nav__link">
+    v2.2.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v223" class="md-nav__link">
+    v2.2.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v222" class="md-nav__link">
     v2.2.2
   </a>
@@ -915,6 +936,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v225" class="md-nav__link">
+    v2.2.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v224" class="md-nav__link">
+    v2.2.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v223" class="md-nav__link">
+    v2.2.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v222" class="md-nav__link">
     v2.2.2
   </a>
@@ -1003,7 +1045,41 @@
                 
                   <h1>Desktop changelog</h1>
                 
-                <h2 id="v222">v2.2.2<a class="headerlink" href="#v222" title="Permanent link">&para;</a></h2>
+                <h2 id="v225">v2.2.5<a class="headerlink" href="#v225" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Fix bug</strong></p>
+<ol>
+<li>Because shield in openblock-resource source code is misspelled as sheild, shield filter in GUI interface is null.</li>
+<li>In VM, one more line of startheartbeat function call is written, and startheartbeat repeats reentry, resulting in real-time communication error.</li>
+<li>Add rtscts flow control configuration to repair the situation that some three-party compatible boards cannot be used when opening rtscts flow control.</li>
+<li>Cannot edit input-box after the alert or confirm window pops up.</li>
+<li>The device selection is not cleared after a new project is created.</li>
+<li>The old device is not disconnected after a new project is created.</li>
+</ol>
+</li>
+</ul>
+<h2 id="v224">v2.2.4<a class="headerlink" href="#v224" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Fix bug</strong></p>
+<ol>
+<li>There is no A0 ~ A5 option for the read digital pin blocks of control boards such as Arduino UNO.</li>
+<li>After using the shortcut key Ctrl + Z to modify blocks, the code on the right side is not updated.</li>
+</ol>
+</li>
+</ul>
+<h2 id="v223">v2.2.3<a class="headerlink" href="#v223" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Fix bug</strong></p>
+<ol>
+<li>When you double-click to open the project file with the selected device, an error will occur in loading.</li>
+<li>After add comment for device extension block and save the project file. If try to load the project after restart the software, there is another comment window appear which cannot able to delete.</li>
+</ol>
+</li>
+</ul>
+<h2 id="v222">v2.2.2<a class="headerlink" href="#v222" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>New feature</strong></p>
@@ -1311,10 +1387,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
       
     
   </body>

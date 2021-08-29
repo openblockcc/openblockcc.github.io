@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://openblockcc.github.io/wiki/en/developer/develop-from-source/add-a-new-board/">
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.be71726b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -1020,9 +1020,9 @@
 <p>修改<code>index.jsx</code>。</p>
 <p>在<code>openblock-gui\src\lib\libraries\devices\index.jsx</code>文件中，你可以看到已经有一些设备的代码在这里了，以Arduino UNO的参数举例。</p>
 <p>首先，在文件顶部 import 图片资源：</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">arduinoUnoIconURL</span> <span class="k">from</span> <span class="s1">&#39;./arduinoUno/arduinoUno.png&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">arduinoUnoConnectionIconURLL</span> <span class="k">from</span> <span class="s1">&#39;./arduinoUno/arduinoUno-illustration.svg&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">arduinoUnoConnectionSmallIconURL</span> <span class="k">from</span> <span class="s1">&#39;./arduinoUno/arduinoUno-small.svg&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">arduinoUnoIconURL</span> <span class="kr">from</span> <span class="s1">&#39;./arduinoUno/arduinoUno.png&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">arduinoUnoConnectionIconURLL</span> <span class="kr">from</span> <span class="s1">&#39;./arduinoUno/arduinoUno-illustration.svg&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">arduinoUnoConnectionSmallIconURL</span> <span class="kr">from</span> <span class="s1">&#39;./arduinoUno/arduinoUno-small.svg&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>而后， 在下方设置设备参数：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1257,7 +1257,7 @@
 <p>同样的在包含实时模式下的代码中，仍然分为两个层，一个负责底层协议的通讯，另一个负责根据对应积木的功能调用前者功能完成对应操作。</p>
 <div class="highlight"><pre><span></span><code><span class="nx">setPinMode</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_peripheral</span><span class="p">.</span><span class="nx">setPinMode</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">PIN</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">MODE</span><span class="p">);</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
             <span class="nx">resolve</span><span class="p">();</span>
         <span class="p">},</span> <span class="nx">SerialportSendInterval</span><span class="p">);</span>
@@ -1438,10 +1438,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56a63758.min.js"></script>
       
     
   </body>
