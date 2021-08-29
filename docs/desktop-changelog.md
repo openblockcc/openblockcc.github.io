@@ -1,3 +1,28 @@
+## v2.2.5
+
+- **Fix bug**
+
+    1. Because shield in openblock-resource source code is misspelled as sheild, shield filter in GUI interface is null.
+    2. In VM, one more line of startheartbeat function call is written, and startheartbeat repeats reentry, resulting in real-time communication error.
+    3. Add rtscts flow control configuration to repair the situation that some three-party compatible boards cannot be used when opening rtscts flow control.
+    4. Cannot edit input-box after the alert or confirm window pops up.
+    5. The device selection is not cleared after a new project is created.
+    6. The old device is not disconnected after a new project is created.
+
+## v2.2.4
+
+- **Fix bug**
+
+    1. There is no A0 ~ A5 option for the read digital pin blocks of control boards such as Arduino UNO.
+    2. After using the shortcut key Ctrl + Z to modify blocks, the code on the right side is not updated.
+
+## v2.2.3
+
+- **Fix bug**
+
+    1. When you double-click to open the project file with the selected device, an error will occur in loading.
+    2. After add comment for device extension block and save the project file. If try to load the project after restart the software, there is another comment window appear which cannot able to delete.
+
 ## v2.2.2
 
 - **New feature**
