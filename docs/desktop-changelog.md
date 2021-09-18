@@ -1,3 +1,10 @@
+## v2.2.7
+
+- **Fix bug**
+
+    1. After loading the project file, save the project file again and load it, there will be an error and the project cannot be loaded.
+    2. After loading the project file, click the new project button, and the interface will crash.
+
 ## v2.2.6
 
 - **Fix bug**
