@@ -3,8 +3,8 @@
 
 ## 中国镜像地址
 
-[Openblock 在线版](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button}
+[Openblock 在线版](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button .md-button--primary}
 
 ## 国际地址
 
-[Openblock Online](https://openblockcc.github.io/openblock-gui/develop/){: .md-button .md-button--primary}
+[Openblock Online](https://openblockcc.github.io/openblock-gui/develop/){: .md-button}
