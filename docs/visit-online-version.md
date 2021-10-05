@@ -3,8 +3,8 @@
 
 ## International Address
 
-[Openblock Online](https://openblockcc.github.io/openblock-gui/develop/){: .md-button}
+[Openblock Online](https://openblockcc.github.io/openblock-gui/develop/){: .md-button .md-button--primary}
 
 ## China Mirror Address
 
-[Openblock Online](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button  .md-button--primary}
+[Openblock Online](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button}
