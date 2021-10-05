@@ -1,3 +1,19 @@
+## v2.2.8
+
+- **New feature**
+
+    1. Add default program mode setting in the device configuration.
+
+- **Fix bug**
+
+    1. After loading a new project file, the connection of the old device is not disconnected.
+    2. After loading a new project file, if the project does not have a device extension, the code area will be empty.
+    3. When connecting to a device without fimata service, there will be no alert prompt to download the firmware.
+    4. Optimize the firmata communication architecture in real-time mode to fix some potential problems.
+    5. Fixed the misspelled device configuration name from leanMore to learnMorern.
+    6. Fixed the inaccurate meaning of Arduino block name from whole number to integer.
+    7. Fixed the problem that Microbit V2 failed to download the firmware when it failed to enter the REPL.
+
 ## v2.2.7
 
 - **Fix bug**
