@@ -7,4 +7,4 @@
 
 ## China Mirror Address
 
-[Openblock Online](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button  .md-button--primary} (Due to Gitee Pages service upgrade temporarily unavailable)
+[Openblock Online](https://openblockcc.gitee.io/openblock-gui/develop/){: .md-button  .md-button--primary}
