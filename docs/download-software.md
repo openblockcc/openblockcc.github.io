@@ -1,12 +1,12 @@
-**OpenBlock 桌面版** 是具有完整功能可以离线试用的软件。**OpenBlock  Link** 需要配合 OpenBlock 在线网站才可以试用。根据实际需要选择下载即可，不必全部下载安装与启动。
+**OpenBlock 桌面版** 是具有完整功能可以离线使用的软件。**OpenBlock  Link** 需要配合 OpenBlock 在线网站才可以使用。根据实际需要选择下载即可，不必全部下载安装与启动。
 
 ## OpenBlock 桌面版
 
 ![](assets/OpenBlock.png)
 
-[Github Release :fontawesome-solid-download:](https://github.com/openblockcc/openblock-desktop/releases){: .md-button  .md-button--primary}
+[百度云盘 (提取码: scaj) :fontawesome-solid-download:](https://pan.baidu.com/s/1ZbpDvno53GAKtcAbGYYR4g){: .md-button .md-button--primary}
 
-[百度云盘 (提取码: scaj) :fontawesome-solid-download:](https://pan.baidu.com/s/1ZbpDvno53GAKtcAbGYYR4g){: .md-button}
+[Github Release :fontawesome-solid-download:](https://github.com/openblockcc/openblock-desktop/releases){: .md-button}
 
 ## OpenBlock Link
 
@@ -15,4 +15,6 @@
 
 ![](assets/OpenBlock-Link.png)
 
-由于软件近期大幅度的更新 OpenBlock Link 尚未完成升级，导致无法兼容目前在线版的网页，暂时关闭 OpenBlock Link 的下载。
+[百度云盘 (提取码: 1ac8) :fontawesome-solid-download:](https://pan.baidu.com/s/19vcH0J_NvuLFL_hBjQoATw){: .md-button .md-button--primary}
+
+[Github Release :fontawesome-solid-download:](https://github.com/openblockcc/openblock-link-desktop/releases){: .md-button}
