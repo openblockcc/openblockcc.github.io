@@ -107,3 +107,4 @@ nav:
     - Introduction: business-service/introduction.md
   - Changelog:
     - Desktop changelog: desktop-changelog.md
+    - Link changelog: link-changelog.md

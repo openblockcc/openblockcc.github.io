@@ -15,4 +15,6 @@
 
 ![](assets/OpenBlock-Link.png)
 
-Due to the recent significant software update, OpenBlock Link has not yet completed the upgrade, resulting in incompatibility with the current online webpage. The download of OpenBlock Link is temporarily closed.
+[Github Release :fontawesome-solid-download:](https://github.com/openblockcc/openblock-link-desktop/releases){: .md-button  .md-button--primary}
+
+[Baidu Disk (password: 1ac8) :fontawesome-solid-download:](https://pan.baidu.com/s/19vcH0J_NvuLFL_hBjQoATw){: .md-button}
