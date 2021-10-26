@@ -1,3 +1,20 @@
+## v2.2.9
+
+- **New feature**
+
+    1. Optimize the windows nsis installation script. Now the first installation path will be set to the root directory of the c drive, and the subsequent installation path will be automatically detected and modified to the installation directory selected during the first installation.
+    2. Add support for original scratch project files.
+    3. Add the devil bird to the sprite and custom library.
+
+- **Fix bug**
+
+    1. Switching the programming mode while the sprite is speaking will cause the interface to crash.
+    2. When loading a project file containing custom list variables, an error will be reported that the loading cannot be completed.
+    3. The parameter blocks of custom functions will be disabled when switching modes.
+    4. The serial port data of esp32 and microbit is not displayed in the terminal.
+    5. Correct the programming language icon of esp32/8266.
+    6. Correct the center coordinates of the demon bird's rotation.
+
 ## v2.2.8
 
 - **New feature**
