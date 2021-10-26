@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://openblockcc.github.io/wiki/zh/desktop-changelog/">
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.24c991ad.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v228" class="md-skip">
+        <a href="#v229" class="md-skip">
           跳转至
         </a>
       
@@ -892,6 +892,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v229" class="md-nav__link">
+    v2.2.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v228" class="md-nav__link">
     v2.2.8
   </a>
@@ -1056,6 +1063,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v229" class="md-nav__link">
+    v2.2.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v228" class="md-nav__link">
     v2.2.8
   </a>
@@ -1186,7 +1200,29 @@
                 
                   <h1>桌面版变更记录</h1>
                 
-                <h2 id="v228">v2.2.8<a class="headerlink" href="#v228" title="Permanent link">&para;</a></h2>
+                <h2 id="v229">v2.2.9<a class="headerlink" href="#v229" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>新功能</strong></p>
+<ol>
+<li>优化windows nsis安装脚本，现在首次安装路径会被设置到c盘根目录，之后的安装路径则会自动探测并修改为首次安装时选择的安装目录。</li>
+<li>添加对scratch原版工程文件的支持。</li>
+<li>在角色选择等资源库中加入恶魔小鸟。</li>
+</ol>
+</li>
+<li>
+<p><strong>修复错误</strong></p>
+<ol>
+<li>在角色说话时切换编程模式会导致界面崩溃。</li>
+<li>加载含有自定义列表变量的工程文件时会报错无法完成加载。</li>
+<li>自定义函数的参数积木在切换模式时会被禁用。</li>
+<li>终端中不显示esp32和microbit串口数据。</li>
+<li>修正esp32/8266的编程语言图标。</li>
+<li>修正恶魔小鸟旋转运动的中心坐标。</li>
+</ol>
+</li>
+</ul>
+<h2 id="v228">v2.2.8<a class="headerlink" href="#v228" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>新功能</strong></p>
@@ -1603,10 +1639,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.bc35569b.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
       
     
   </body>
