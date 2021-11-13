@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://openblockcc.github.io/wiki/zh/developer/develop-from-source/quick-start/">
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.db9e7362.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -723,6 +723,8 @@
       </a>
       
         
+
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
@@ -989,6 +991,8 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
@@ -1089,10 +1093,11 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>如果你是在中国地区或其他网络受限地区，你需要购买一个网络代理才能够成功执行下面的操作内容。通过以下指令设置npm的网络代理，请勿直接复制执行，将下面的 <code>server</code> 和 <code>port</code> 替换为你的代理地址和端口。(PS: 不用挣扎尝试在没有网络代理的情况下进行操作，会报各种错误或卡死在某些步骤上)</p>
-<div class="highlight"><pre><span></span><code>npm config <span class="nb">set</span> proxy http://server:port
-npm config <span class="nb">set</span> https-proxy http://server:port
-</code></pre></div>
+<p>如果你是在中国大陆地区，你需要购买一个科学上网的代理才能够成功执行下面的操作内容。由于科学上网的代理软件只会在特定端口监听和转发数据，所以我们推荐开发者同时下载安装本地代理软件: <code>proxifier</code>，以此来将计算机上运行程序的网络流量转移到代理软件的监听端口。在 proxifier 中完成 Proxy Servers 的配置，并在 Proxification Rules 中添加设置科学上网的代理软件的连接方式为直连（不设置这个会形成网络回环），而后将默认连接改为由代理转发，这样计算机上大部分程序的网络连接都会通过 proxifier 转发至科学上网的代理端口，从而能够访问开发时所需要下载的资源。</p>
+<p>在没有成功配置网络代理前请不要尝试开发！</p>
+<p>在没有成功配置网络代理前请不要尝试开发！</p>
+<p>在没有成功配置网络代理前请不要尝试开发！</p>
+<p>重要的事情说三遍。使用 cnpm 或是国内镜像地址也没用，你一定会卡死在某些资源的安装步骤中。</p>
 </div>
 <h2 id="_2">克隆&amp;安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1291,10 +1296,10 @@ cd ..
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
