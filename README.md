@@ -1,12 +1,10 @@
 # OpenBlock English Wiki
 
-![](https://img.shields.io/github/workflow/status/openblockcc/wiki/documentation-en/en) [![Gitter](https://badges.gitter.im/openblockcc/community.svg)](https://gitter.im/openblockcc/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+![](https://img.shields.io/github/workflow/status/openblockcc/openblockcc.github.io/documentation-en/en) [![Gitter](https://badges.gitter.im/openblockcc/community.svg)](https://gitter.im/openblockcc/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Visit Wiki
 
-- Github: https://openblockcc.github.io/wiki/en
-
-- Gitee (mirror): https://openblockcc.gitee.io/wiki/en
+- https://wiki.openblock.cc
 
 ## Jion Group
 
