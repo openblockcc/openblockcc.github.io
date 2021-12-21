@@ -6,8 +6,8 @@ site_description: >-
   OpenBlock English Wiki
 
 # Repository
-repo_name: openblockcc/wiki
-repo_url: https://github.com/openblockcc/wiki/tree/en
+repo_name: openblockcc/openblockcc.github.io
+repo_url: https://github.com/openblockcc/openblockcc.github.io/tree/en
 
 # Configuration
 theme:
