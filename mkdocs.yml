@@ -6,8 +6,8 @@ site_description: >-
   OpenBlock 中文资料站
 
 # Repository
-repo_name: openblockcc/wiki
-repo_url: https://github.com/openblockcc/wiki/tree/zh
+repo_name: openblockcc/openblockcc.github.io
+repo_url: https://github.com/openblockcc/openblockcc.github.io/tree/zh
 
 # Configuration
 theme:
