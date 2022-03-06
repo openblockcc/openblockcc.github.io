@@ -1,3 +1,34 @@
+## v2.3.0
+
+- **New feature**
+
+    1. Application auto-update feature is now supported.
+    2. Supports opening multiple apps at the same time.
+    3. Added Traditional Chinese translation.
+    4. Add software loading interface.
+    5. Added code editing support, you can now edit the code after unlocking the code area.
+    6. Hide sprites and sounds tabs in upload mode.
+    7. Disable the edit button in the menu bar in upload mode.
+    8. In the upload mode of micropython, the building blocks of custom list variables can generate code.
+    9. Optimize and reduce the file size of external resources.
+    10. Merge the installation files for the 32-bit and 64-bit versions of the windows version.
+    11. When saving a project without a hardware device, convert it to a format supported by scratch3, so that scratch3 can open the pure scratch project created by openblock. (The save format is still .ob but scratch can be forced to open)
+
+- **Fix bug**
+
+    1. Fix the problem that the software needs to copy the cache when it is first started, resulting in no display for a long time. After the user clicks the startup icon multiple times, multiple programs operate on the cache at the same time, causing the cache file to be damaged. Then the program fails to start.
+    2. Fix wrong translation of button to turn on and off acceleration mode.
+    3. After selecting arduino uno and then mega2560, the pin menu is not updated.
+    4. The arduino pin interrupt function code is not right.
+    5. The python variable increase block will cut off the first digit after inputting more than two digits.
+    6. The generated code logic is incorrect when using a repeating block on a head block other than a hardware device startup event block.
+    7. The code of arduino contains block should be 'indexOf' but not 'indexof'.
+    8. The arduino's comparison block generates code that does not conform to the rules of the C language when the input is a pair of strings or a single character.
+    9. In micropython, since there is no global declaration for the custom variable in the function defined by the custom function or event, an error will be reported when using the custom variable block under these blocks.
+    10. Adjust the micropython code generation structure to prevent variables and functions from being called before the definition declaration.
+    11. Blocks generate code when they are dragged from the toolbar but not yet placed in the workspace.
+    12. Fix the arduino device sometimes wait for more than ten seconds to start uploading after the compilation is completed.
+
 ## v2.2.9
 
 - **New feature**
