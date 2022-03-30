@@ -11,14 +11,6 @@
 - Java
 - 根据 [node-gyp官方说明](https://www.npmjs.com/package/node-gyp) 安装必要的本地编译工具
 
-!!! Warning
-    如果你是在中国地区或其他网络受限地区，你需要购买一个网络代理才能够成功执行下面的操作内容。通过以下指令设置npm的网络代理，请勿直接复制执行，将下面的 `server` 和 `port` 替换为你的代理地址和端口。(PS: 不用挣扎尝试在没有网络代理的情况下进行操作，会报各种错误或卡死在某些步骤上)
-
-    ```bash
-    npm config set proxy http://server:port
-    npm config set https-proxy http://server:port
-    ```
-
 ## 克隆&安装
 
 1. 克隆所有工程核心仓库。 (使用```--depth``` 指令来避免下载全部的仓库历史内容，否则GUI的大小将会超过1.18GB)

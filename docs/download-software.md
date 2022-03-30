@@ -4,7 +4,7 @@
 
 ![](assets/OpenBlock.png)
 
-[Github Release :fontawesome-solid-download:](https://github.com/openblockcc/openblock-desktop/releases){: .md-button  .md-button--primary}
+[百度云盘 (提取码: scaj) :fontawesome-solid-download:](https://pan.baidu.com/s/1ZbpDvno53GAKtcAbGYYR4g){: .md-button .md-button--primary}
 
 [Baidu Disk (password: scaj) :fontawesome-solid-download:](https://pan.baidu.com/s/1ZbpDvno53GAKtcAbGYYR4g){: .md-button}
 
