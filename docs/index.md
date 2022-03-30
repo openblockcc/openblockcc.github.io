@@ -15,7 +15,7 @@ OpenBlock 是一个开源图形块编程软件，即可以用于软件程序编�
 
 ## 下载离线版或在线试用
 
-[下载软件 :fontawesome-solid-download:](download-software.md){: .md-button  .md-button--primary} [访问在线版 :fontawesome-solid-globe-asia:](visit-online-version.md){: .md-button}
+[下载软件 :fontawesome-solid-download:](download-software.md){: .md-button  .md-button--primary} [访问在线版 :fontawesome-solid-earth-asia:](visit-online-version.md){: .md-button}
 
 ## 使用说明
 
