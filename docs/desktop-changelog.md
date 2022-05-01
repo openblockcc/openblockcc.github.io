@@ -1,23 +1,23 @@
 ## v2.3.1
 
-- **新功能**
+- **New feature**
 
-    1. 用户可以在串口终端中使用回车键发送数据。
-    2. 提高 esp32/8266 的默认上传波特率以提高上传速度。
-    3. 删除 esp32 不常使用的 sensor 目录中的积木。
-    4. 串口终端新增 Ctrl+A/B/C/D 快捷键支持，以更好的与 micrpython repl 界面交互。
-    5. 移除不常用的 arduino mini 控制板。
-    6. 修改 arduino nano 下载参数使用旧的引导加载程序，并添加缺少的 A6 A7 引脚。
-    7. 加宽上传窗口。
-    8. 屏蔽 esp32/8266 内部 flash 使用的管脚。
-    9. 增加 esp32 引脚模式的下拉输入模式。
+    1. The user can use the enter key to send data in the serialport console.
+    2. Increase default upload baudrate for esp32/8266 to increase upload speed.
+    3. Delete the blocks in the sensor directory that are not commonly used by esp32.
+    4. Added support for Ctrl + A/B/C/D shortcut keys in the serial terminal to better interact with the micrpython repl interface.
+    5. Remove the arduino mini board that is not used frequently.
+    6. Modify arduino nano download parameters to use old bootloader and add missing A6 A7 pins.
+    7. Widen upload window.
+    8. Block the esp32/8266 pins which are used by internal flash.
+    9. Add input-pulldown mode of esp32 pin mode.
 
-- **修复错误**
+- **Fix bug**
 
-    1. 许可证文件未打包在安装包中。
-    2. 修复 microbit 终端积木外框与本体颜色相同的问题
-    3. 修复部分int类型输入可以设置为小数的问题。
-    4. Microbit 的设置像素在 XX 位置亮度积木的亮度参数没有生效。
+    1. The license file is not packaged in the installation package.
+    2. Fixed the problem that the outer frame and the main body of the microbit terminal block were the same color.
+    3. Fix the problem that some int type input can be set to decimal.
+    4. Microbit show piexl at xx with brightness xx block's brightness parameter don't take effect.
 
 ## v2.3.0
 
