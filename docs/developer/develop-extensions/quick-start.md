@@ -3,7 +3,7 @@
 为 OpenBlock 开发插件的方式主要有2种：
 
 1. 安装 OpenBlock Desktop 或 OpenBlock Link，在缓存目录下添加并调试插件。
-2. 安装Node开发环境，克隆 openblock-resource 软件包并运行，而后在临时生成的缓存目录下添加并调试插件。（此方法可大幅度提高调试效率。）
+2. 安装 Node.js 开发环境，克隆 openblock-resource 软件包并运行，而后在临时生成的缓存目录下添加并调试插件。（此方法可大幅度提高调试效率。）
 
 === "方法1"
 
@@ -13,16 +13,17 @@
 
         ```js
         // OpenBlock Desktop - Windows
-        "C:\Users\<user name>\AppData\Roaming\Openblock\Data\external-resources\extensions"
+        "C:\Users\<user name>\AppData\Roaming\OpenBlock Desktop\Data\external-resources"
         // OpenBlock Desktop - Mac
         待补充
         // OpenBlock Desktop - Linux
         待补充
+
         // OpenBlock Link - Windows
         "C:\Users\<user name>\AppData\Roaming\Openblock Link\Data\external-resources\extensions"
-        // OpenBlock Desktop - Mac
+        // OpenBlock Link - Mac
         待补充
-        // OpenBlock Desktop - Linux
+        // OpenBlock Link - Linux
         待补充
         ```
 
@@ -45,11 +46,7 @@
         npm run fetch
         ```
 
-    3. 而后打开 openblock-resource 存放的路径，在目录下找到并打开以下路径：
-
-        ```js
-        "external-resources/extensions"
-        ```
+    3. 而后打开 openblock-resource 存放的路径，在目录下找到并打开文件夹 `external-resources`
 
 编辑器方面，推荐使用 VS Code.
 
@@ -57,7 +54,7 @@
 
 下面以开发一个适用于 Arduino 的 LED 模块插件作为入门例程。
 
-进入 `arduino/sensor` 目录复制 `dht11` 文件夹到 `arduino/display`，并重命名为 `singleLED` 我们将在此基础上修改为新的 LED 模块插件。操作完成后的目录结构应该如下所示：
+进入 `external-resources/extensions/arduino/sensor` 目录复制 `dht` 文件夹到 `arduino/display`，并重命名为 `singleLED` 我们将在此基础上修改为新的 LED 模块插件。操作完成后的目录结构应该如下所示：
 
 ![](./assets/directory-structure.png)
 
@@ -66,17 +63,20 @@
 index文件描述了插件的基本信息，包含插件的名称等在GUI上显示和交互的内容。原始的文件内容如下：
 
 ```js
-const dht11 = formatMessage => ({
-    name: 'DHT11',
-    extensionId: 'dht11',
+const dht = formatMessage => ({
+    name: formatMessage({
+        id: 'dht.name',
+        default: 'DHT Sensor'
+    }),
+    extensionId: 'dht',
     version: '1.0.0',
-    supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoLeonardo', 'arduinoMega2560'],
+    supportDevice: ['arduinoUno', 'arduinoNano', 'arduinoLeonardo',
+        'arduinoMega2560', 'arduinoEsp32', 'arduinoEsp8266'],
     author: 'ArthurZheng',
-    iconURL: `asset/DTH11.png`,
+    iconURL: `asset/dht.png`,
     description: formatMessage({
-        id: 'arduino.dht11.description',
-        default: 'DHT11 Temperature and humidity sensor module.',
-        description: 'Description of dht11'
+        id: 'dht.description',
+        default: 'DHT Temperature and humidity sensor module.'
     }),
     featured: true,
     blocks: 'blocks.js',
@@ -84,14 +84,16 @@ const dht11 = formatMessage => ({
     toolbox: 'toolbox.js',
     msg: 'msg.js',
     library: 'lib',
+    official: true,
     tags: ['sensor'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/'
+    helpLink: 'https://wiki.openblock.cc'
 });
 
-module.exports = dht11;
+module.exports = dht;
+
 ```
 
-1. 首先替换首位定义并导出的变量名从 dht11 为 singleLED。
+1. 首先替换首位定义并导出的变量名从 dht 为 singleLED。
 
 2. 修改 Name 为 Single LED，此属性为在插件界面显示的插件名称。
 
@@ -117,7 +119,7 @@ module.exports = dht11;
 
     此属性为插件介绍，在插件图片下方显示。
 
-8. 修改 tags 为 `display`，插件界面中用户选择 display 过滤时，此插件将会显示。
+8. 修改 tags 为 `display`，插件界面中用户选择 display 标签过滤内容时，此插件将会显示。
 
 9. 删除 lib 属性以及 lib 文件夹，因为此插件不需要使用第三方的 Arduino 库。
 
@@ -141,60 +143,37 @@ const singleLED = formatMessage => ({
     generator: 'generator.js',
     toolbox: 'toolbox.js',
     msg: 'msg.js',
+    official: true,
     tags: ['display'],
-    helpLink: 'https://openblockcc.gitee.io/wiki/'
+    helpLink: 'https://wiki.openblock.cc'
 });
 
 module.exports = singleLED;
 ```
 
-### 修改 locales.js
+### 修改 *-locales.json
 
-这个文件中保存了 index 文件中 description 的本地化翻译内容。我们将 index 文件中的 formatMessage 对应 id 的翻译加入此文件。
+`external-resources/official-locales.json` 这个文件中保存了由官方维护的设备和插件 index 文件中 description 的本地化翻译内容，在 openblock 开发过程中这个文件是由工作流自动提取到 transifex 翻译平台由维护者翻译后，再由工作流自动生成的。
 
-```js
-module.exports = {
-    'en': {
-        'l298n.description': 'L298N motor drive module.',
-        'dht11.description': 'DHT11 temperature and humidity sensor module.',
-        'hc-sr04.description': 'HC-SR04 distance measurement module.',
-        'oled.description': 'I2C oled display.',
-        'softwareSerial.name': 'Software serial',
-        'softwareSerial.description': 'Allow serial communication on other digital pins of the Arduino.',
-        'cooperativeScheduler.name': 'Cooperative scheduler',
-        'cooperativeScheduler.description': 'Allow Arduino run multiple applications.',
-        'ironKit.description': 'Yiqichuang iron kit robot.',
-        'servo.name': 'Servo',
-        'servo.description': 'Classic servo support for microbit.',
-        'QDPRobot.description': 'QDP robot.',
-        'QDPRobot_C02.description': 'QDP robot C02.',
-        'ps2.name': 'PS2 remote control.',
-        'ps2.description': 'PS2 wireless remote controller with 4 signal lines.',
-        'singleLED.description': 'Single led module.'
+`external-resources/third-party-locales.json` 则是用来存放第三方内容，此部分需要手动修改，不会由自动化工作流处理。
+单以上两个文件的实际功能是相同的，软件在实际调用是会合并这些内容，下面的内容添加在哪个文件中都可以。
+
+```json
+{
+    "en": {
+        "singleLED.description": "Single led module."
+        ...
     },
-    'zh-cn': {
-        'l298n.description': 'L298N 电机驱动模块.',
-        'dht11.description': 'DHT11 温湿度传感器模块.',
-        'hc-sr04.description': 'HC_SR04 超声波测距模块.',
-        'oled.description': 'I2C oled 显示屏.',
-        'softwareSerial.name': '软件串口',
-        'softwareSerial.description': '使Arduino可以使用其他数字口进行串口通信.',
-        'cooperativeScheduler.name': '多任务调度器',
-        'cooperativeScheduler.description': '使Arduino可以运行多个应用.',
-        'ironKit.description': '意启创金属套件机器人.',
-        'servo.name': '舵机',
-        'servo.description': '让Microbit可以控制普通的舵机.',
-        'QDPRobot.description': '齐护机器人.',
-        'QDPRobot_C02.description': '齐护机器人 C02.',
-        'ps2.name': 'PS2无线遥控器.',
-        'ps2.description': '使用4根信号线的PS2无线遥控器.',
-        'singleLED.description': '单路 LED 模块.'
+    "zh-cn": {
+        "singleLED.description": "单 led 模块。"
+        ...
+    },
+    "zh-tw": {
+        "singleLED.description": "單 led 模塊。"
+        ...
     }
-};
-
+}
 ```
-
-
 
 ### 修改积木结构，语言生成器，工具箱列表及翻译文件内容
 
@@ -305,6 +284,10 @@ exports = addMsg;
 ```
 这个文件用于实现本地化翻译内容，定义了上面几个文件中变量的实际内容。
 
+### 关闭校验和验证
+
+修改 `external-resources/config.json` 文件内容，删除属性 `"sha256": "xxx"`。
+
 ### 验证插件功能
 
 而后根据之前搭建开发环境的方式的不同，选择以下操作：
@@ -337,7 +320,7 @@ exports = addMsg;
     使用 openblock-resource 方法时，再启动后会模拟桌面版首次启动的过程，将路径下的 external-resources 复制到上级目录的 `.openblockData` 文件夹中，且每次启动都会自动清除这个目录的内容并重新复制，在插件体积较大时该过程耗时较长，建议将 `package.json` 文件 L8 行中的 `"start": "rimraf ../.openblockData/external-resources && node ./test/start.js",` 改为 `"start": "node ./test/start.js",` 以关闭自动清除指令，如果在之后的修改中删除了某些文件时，可以手动清除目录中的缓存以删除不再使用的文件。
 
 !!! Tip
-    在服务器启动后，缓存目录下的文件只有 `index.js`， `locales.js`，`config.json` 文件会被直接读取，在修改这仨个文件后必须重启软件或指令服务器才可生效。但其他如：`blocks.js` 等文件在修改后可以在软件界面中重新加载就可生效，而不需要重启，这样可以加快调试速度和流程。
+    在服务器启动后，缓存目录下的文件只有 `index.js`， `*-locales.json`，`config.json` 文件会被直接读取，在修改这仨个文件后必须重启软件或指令服务器才可生效。但其他如：`blocks.js` 等文件在修改后可以在软件界面中重新加载就可生效，而不需要重启，这样可以加快调试速度和流程。
 
 ## 贡献代码
 
