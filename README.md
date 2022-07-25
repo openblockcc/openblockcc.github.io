@@ -4,7 +4,7 @@
 
 ## Visit Wiki
 
-- https://wiki.openblock.cc
+- [https://openblockcc.github.io](https://openblockcc.github.io)
 
 ## Jion Group
 
