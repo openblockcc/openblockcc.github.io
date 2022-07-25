@@ -4,7 +4,7 @@
 
 ## 访问Wiki
 
-- https://wiki.openblock.cc
+- [https://openblockcc.github.io](https://openblockcc.github.io)
 
 ## 加入讨论组
 
