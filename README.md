@@ -4,7 +4,7 @@
 
 ## Visit wiki
 
-- https://wiki.openblock.cc
+- [https://openblockcc.github.io](https://openblockcc.github.io)
 
 ## Join chat
 
