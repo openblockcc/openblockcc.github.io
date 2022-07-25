@@ -16,6 +16,6 @@
 
 This branch is just a site entrance. It does not contain the actual content. If you want to submit PRs, please visit:
 
-- Chinese branch: [https://github.com/openblockcc/openblockcc.github.io/tree/zh](https://github.com/openblockcc/openblockcc.github.io/tree/zh)
+- Chinese branch: [https://github.com/openblockcc/openblockcc.gitee.io/tree/zh](https://github.com/openblockcc/openblockcc.gitee.io/tree/zh)
 
 - English branch : [https://github.com/openblockcc/openblockcc.github.io/tree/en](https://github.com/openblockcc/openblockcc.github.io/tree/en)
